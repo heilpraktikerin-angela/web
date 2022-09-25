@@ -5,7 +5,13 @@ node_modules
 .vercel
 .output
 
+# Generated during Build
 /build/
 /public/build
-/api/index.js
-/api/index.js.map
+src/api/index.js
+src/api/index.js.map
+src/api/_assets
+src/app/tailwind.css
+
+# IDE
+.idea
