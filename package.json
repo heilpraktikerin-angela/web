@@ -6,7 +6,7 @@
     "build:css": "pnpm run generate:css -- --minify",
     "dev": "concurrently \"pnpm run dev:css\" \"remix dev\"",
     "dev:css": "pnpm run generate:css -- --watch",
-    "generate:css": "npx tailwindcss -i ./src/styles/tailwind.css -o ./src/app/tailwind.css",
+    "generate:css": "npx tailwindcss -i src/styles/tailwind.scss -o ./src/app/tailwind.css",
     "postinstall": "remix setup node",
     "install:clean": "shx rm -rf node_modules && pnpm install",
     "lint": "npx eslint src/**/*"

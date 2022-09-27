@@ -8,7 +8,7 @@ const Blog = () => {
   // 'Outlet'
   return (
     <div className="flex justify-center">
-      <div className="prose lg:prose-xl py-10">
+      <div className="prose tablet:prose-xl py-10">
         <Outlet />
       </div>
     </div>
