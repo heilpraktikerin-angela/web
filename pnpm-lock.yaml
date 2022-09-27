@@ -13,6 +13,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.38.0
   '@typescript-eslint/parser': ^5.38.0
   '@vercel/node': ^2.4.4
+  clsx: ^1.2.1
   concurrently: ^7.4.0
   eslint: ^8.23.1
   eslint-config-prettier: ^8.5.0
@@ -29,6 +30,7 @@ dependencies:
   '@remix-run/react': 1.7.2_biqbaboplfbrettd7655fr4n2y
   '@remix-run/vercel': 1.7.2_kvynx7e3ahiuqujwot5h665b4a
   '@vercel/node': 2.5.18
+  clsx: 1.2.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -2750,6 +2752,11 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
     dev: true
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /code-block-writer/10.1.1:
     resolution: {integrity: sha512-67ueh2IRGst/51p0n6FvPrnRjAGHY5F8xdjkgrYE7DDzpJe6qA07RYQ9VcoUeo5ATOjSOiWpSL3SWBRRbempMw==}
