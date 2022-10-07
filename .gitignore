@@ -11,7 +11,7 @@ node_modules
 src/api/index.js
 src/api/index.js.map
 src/api/_assets
-src/app/tailwind.css
+*.css
 
 # IDE
 .idea

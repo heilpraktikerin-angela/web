@@ -9,5 +9,12 @@
     ],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
-    }
+    },
+    "tailwindCSS.experimental.classRegex": [
+        "tss`([^`]*)",
+     ],
+     "files.exclude": {
+        "**/*.css": true,
+        "**/*.css.map": true
+      }
 }

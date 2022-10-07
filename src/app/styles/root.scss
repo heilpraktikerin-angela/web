@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@function toRGBValues($color) {
+  @return red($color) + ', ' + green($color) + ', ' + blue($color);
+}
+
 @layer base {
+
   :root {
     /* ============================================================================== */
     /* Primitive Colors

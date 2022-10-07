@@ -1,7 +1,8 @@
 // Based on: https://remix.run/docs/en/v1/guides/styling#tailwind-css
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/app/**/*.{ts,tsx}'],
+  content: ['./src/app/**/*.{ts,tsx,jsx,js}'],
   theme: {
     // https://tailwindcss.com/docs/theme#screens
     screens: {
@@ -30,7 +31,7 @@ module.exports = {
       brown: withOpacity('--color-brown'),
 
       // Theme Colors
-      primary: withOpacity('--color-primary'),
+      primary: withOpacity('var(--color-primary)'),
       'primary-light': withOpacity('--color-primary-stroke'),
       'primary-stroke': withOpacity('--color-purple-light'),
 
@@ -41,43 +42,43 @@ module.exports = {
       'tertiary-light': withOpacity('--clor-tertiary-light'),
       'tertiary-stroke': withOpacity('--color-tertiary-stroke'),
     },
-    textColor: {
-      skin: {
-        base: withOpacity('--color-text-base'),
-        muted: withOpacity('--color-text-muted'),
-        inverted: withOpacity('--color-text-inverted'),
-      },
-    },
-    backgroundColor: {
-      skin: {
-        fill: withOpacity('--color-fill'),
-        'button-accent': withOpacity('--color-button-accent'),
-        'button-accent-hover': withOpacity('--color-button-accent-hover'),
-        'button-muted': withOpacity('--color-button-muted'),
-      },
-    },
+    // textColor: {
+    //   skin: {
+    //     base: withOpacity('--color-text-base'),
+    //     muted: withOpacity('--color-text-muted'),
+    //     inverted: withOpacity('--color-text-inverted'),
+    //   },
+    // },
+    // backgroundColor: {
+    //   skin: {
+    //     fill: withOpacity('--color-fill'),
+    //     'button-accent': withOpacity('--color-button-accent'),
+    //     'button-accent-hover': withOpacity('--color-button-accent-hover'),
+    //     'button-muted': withOpacity('--color-button-muted'),
+    //   },
+    // },
     boxShadow: {
       sm: '--box-shadow-sm',
       lg: '--box-shadow-lg',
     },
-    // https://tailwindcss.com/docs/font-size#customizing-your-theme
-    fontSize: {
-      xs: '--font-size-xs',
-      sm: '--font-size-sm',
-      lg: '--font-size-lg',
-      xl: '--font-size-xl', // h4
-      '2xl': '--font-size-2xl', // h3
-      '3xl': '--font-size-3xl', // h2
-      '4xl': '--font-size-4xl', // h1
-    },
-    fontFamily: {
-      'playfair-display': 'Playfair Display, sans-serif',
-      'sf-pro-text': 'SF Pro Text, sans-serif',
-    },
-    // TODO https://www.youtube.com/watch?v=cZc4Jn5nK3k
-    extend: {
-      // extend default tailwind styles
-    },
+    // // https://tailwindcss.com/docs/font-size#customizing-your-theme
+    // fontSize: {
+    //   xs: '--font-size-xs',
+    //   sm: '--font-size-sm',
+    //   lg: '--font-size-lg',
+    //   xl: '--font-size-xl', // h4
+    //   '2xl': '--font-size-2xl', // h3
+    //   '3xl': '--font-size-3xl', // h2
+    //   '4xl': '--font-size-4xl', // h1
+    // },
+    // fontFamily: {
+    //   'playfair-display': 'Playfair Display, sans-serif',
+    //   'sf-pro-text': 'SF Pro Text, sans-serif',
+    // },
+    // // TODO https://www.youtube.com/watch?v=cZc4Jn5nK3k
+    // extend: {
+    //   // extend default tailwind styles
+    // },
   },
   variants: {
     extend: {},
@@ -89,19 +90,8 @@ module.exports = {
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue != null) {
-      return `rgba(var(${hexToRgb(variableName)}), ${opacityValue})`;
+      return `rgba(toRGBValues(#{var(${variableName})}), ${opacityValue})`;
     }
     return `var(${variableName})`;
   };
-}
-
-function hexToRgb(hex) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
-    : hex;
 }

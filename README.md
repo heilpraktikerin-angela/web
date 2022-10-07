@@ -2,18 +2,8 @@
 
 - [Remix Docs](https://remix.run/docs)
 
-## Deployment
-
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
-
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
-
-```sh
-npm i -g vercel
-vercel
-```
-
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+TODO
+-> Sass -> Tailwind -> PostCSS
 
 ## Development
 
@@ -32,3 +22,26 @@ npm run dev
 Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
 If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+
+## Learnings
+
+### Costs of CSS-in-JS Libraries
+
+- https://itnext.io/how-to-increase-css-in-js-performance-by-175x-f30ddeac6bce
+- https://daily.dev/blog/why-i-moved-from-styled-components-to-tailwind-css-and-whats-the-future-of-css-in-js
+
+### Sass Preprocessing
+
+- https://sass-lang.com/guide
+
+### Hide processed `.css` files
+
+```
+//.vscode/settings.json
+{
+  "files.exclude": {
+    "**/*.css": true,
+    "**/*.css.map": true
+  }
+}
+```

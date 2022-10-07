@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import styles from './tailwind.css';
+import styles from './styles/root.tailwind.css';
 
 // Import generated Tailwind.css into the App
 // https://remix.run/docs/en/v1/guides/styling#tailwind-css

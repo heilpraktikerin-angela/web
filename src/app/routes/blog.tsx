@@ -1,5 +1,6 @@
 import { Outlet } from '@remix-run/react';
-import clsx from "clsx";
+import PageLayout from '~/components/layout/PageLayout';
+import { tss } from '~/core/helper/tss';
 
 // 'blog.tsx' here is a so called 'Layout Route'
 // which basically wraps around each individual file in the corresponding same named folder (here 'blog')
@@ -8,15 +9,18 @@ import clsx from "clsx";
 const Blog = () => {
   // 'Outlet'
   return (
-    <div className={OuterBlogContainer}>
+    <PageLayout>
       <div className={BlogContainer}>
         <Outlet />
       </div>
-    </div>
+    </PageLayout>
   );
 };
 
 export default Blog;
 
-const OuterBlogContainer = clsx("flex", "justify-center");
-const BlogContainer = clsx("prose", "tablet:prose-xl",  "py-10");
+const BlogContainer = tss`
+ prose
+ tablet:prose-xl
+ py-10
+`;

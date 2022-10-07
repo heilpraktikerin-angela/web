@@ -3,10 +3,11 @@
   "sideEffects": false,
   "scripts": {
     "build": "pnpm run build:css && remix build",
-    "build:css": "pnpm run generate:css -- --minify",
+    "build:css": "pnpm run generate:sass:css --style compressed && pnpm run generate:tailwind:css --minify",
     "dev": "concurrently \"pnpm run dev:css\" \"remix dev\"",
-    "dev:css": "pnpm run generate:css -- --watch",
-    "generate:css": "npx tailwindcss -i src/styles/tailwind.scss -o ./src/app/tailwind.css",
+    "dev:css": "concurrently \"pnpm run generate:sass:css --watch\" \"pnpm run generate:tailwind:css --watch\"",
+    "generate:sass:css": "sass ./src/app/:./src/app/ --no-source-map",
+    "generate:tailwind:css": "npx tailwindcss -i ./src/app/styles/root.css -o ./src/app/styles/root.tailwind.css",
     "postinstall": "remix setup node",
     "install:clean": "shx rm -rf node_modules && pnpm install",
     "lint": "npx eslint src/**/*"
@@ -18,7 +19,8 @@
     "@vercel/node": "^2.4.4",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.55.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.7.2",
@@ -29,10 +31,12 @@
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
+    "autoprefixer": "^10.4.12",
     "concurrently": "^7.4.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "postcss": "^8.4.17",
     "prettier": "^2.7.1",
     "shx": "^0.3.4",
     "tailwindcss": "^3.1.8",
