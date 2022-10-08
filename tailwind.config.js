@@ -90,7 +90,9 @@ module.exports = {
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue != null) {
-      return `rgba(toRGBValues(#{var(${variableName})}), ${opacityValue})`;
+      // Note: Only works with colors structured as rgb as CSS variables aren't resolved at compile time.
+      //       See this article: // https://medium.com/techhive-io/how-to-use-css-variables-with-sass-mixins-671e1f6067b3
+      return `rgba(var(${variableName}), ${opacityValue})`;
     }
     return `var(${variableName})`;
   };
