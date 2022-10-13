@@ -2,40 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-@function toRGBValues($color) {
-  @return red($color) + ', ' + green($color) + ', ' + blue($color);
+// https://medium.com/techhive-io/how-to-use-css-variables-with-sass-mixins-671e1f6067b3
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
 }
+
+// ==============================================================================
+// Primitive Colors
+//  ==============================================================================
+
+$color-white: #ffffff;
+$color-black: #282128;
+$color-black-75: #5e595e;
+$color-black-50: #949094;
+$color-black-25: #c9c7c9;
+$color-black-10: #eae9ea;
+$color-black-5: #f4f4f4;
+
+$color-purple-light: #d8a9de;
+$color-purple: #8b5191;
+
+$color-green-light: #aadfac;
+$color-green: #789160;
+
+$color-brown-light: #dedfaa;
+$color-brown-green: #b5c08c;
+$color-brown: #9c9c77;
 
 @layer base {
 
   :root {
-    /* ============================================================================== */
-    /* Primitive Colors
-    /* ============================================================================== */
+    // ==============================================================================
+    // Primitive Colors with RGB channel sibling
+    //
+    // Note: To work with Tailwind opacity each color has a dedicated RGB channels sibling,
+    // which has to be used to achieve the inbuilt opacity functionality of Tailwind!
+    // https://tailwindcss.com/docs/customizing-colors#using-css-variables
+    //  ==============================================================================
 
-    --color-white: #ffffff;
+    --color-white: #{$color-white};
+    --color-white--rgb: #{hexToRGB($color-white)};
+    --color-black: #{$color-black};
+    --color-black--rgb: #{hexToRGB($color-black)};
+    --color-black-75: #{$color-black-75};
+    --color-black-75--rgb: #{hexToRGB($color-black-75)};
+    --color-black-50: #{$color-black-50};
+    --color-black-50--rgb: #{hexToRGB($color-black-50)};
+    --color-black-25: #{$color-black-25};
+    --color-black-25--rgb: #{hexToRGB($color-black-25)};
+    --color-black-10: #{$color-black-10};
+    --color-black-10--rgb: #{hexToRGB($color-black-10)};
+    --color-black-5: #{$color-black-5};
+    --color-black-5--rgb: #{hexToRGB($color-black-5)};
 
-    --color-black: #282128;
-    --color-black-75: #5e595e;
-    --color-black-50: #949094;
-    --color-black-25: #c9c7c9;
-    --color-black-10: #eae9ea;
-    --color-black-5: #f4f4f4;
+    --color-purple-light: #{$color-purple-light};
+    --color-purple-light--rgb: #{hexToRGB($color-purple-light)};
+    --color-purple: #{$color-purple};
+    --color-purple--rgb: #{hexToRGB($color-purple)};
 
-    --color-purple-light: #d8a9de;
-    --color-purple: #8b5191;
+    --color-green-light: #{$color-green-light};
+    --color-green-light--rgb: #{hexToRGB($color-green-light)};
+    --color-green: #{$color-green};
+    --color-green--rgb: #{hexToRGB($color-green)};
 
-    --color-green-light: #aadfac;
-    --color-green: #789160;
+    --color-brown-light: #{$color-brown-light};
+    --color-brown-light--rgb: #{hexToRGB($color-brown-light)};
+    --color-brown-green: #{$color-brown-green};
+    --color-brown-green--rgb: #{hexToRGB($color-brown-green)};
+    --color-brown: #{$color-brown};
+    --color-brown--rgb: #{hexToRGB($color-brown)};
 
-    --color-brown-light: #dedfaa;
-    --color-brown-green: #b5c08c;
-    --color-brown: #9c9c77;
 
-    /* ============================================================================== */
-    /* Primitive Font Sizes
-    /* Calculated with: https:/*nekocalc.com/de/px-zu-rem-umrechner
-    /* ============================================================================== */
+    // ==============================================================================
+    // Primitive Font Sizes
+    // Calculated with: https://nekocalc.com/de/px-zu-rem-umrechner
+    // ==============================================================================
 
     --font-size-12: 0.75rem;
     --font-size-14: 0.875rem;
@@ -56,32 +97,46 @@
     --font-size-64: 4rem;
     --font-size-72: 4.5rem;
 
-    /* ============================================================================== */
-    /* Theme Colors
-    /* ============================================================================== */
+    // ==============================================================================
+    // Theme Colors
+    // ==============================================================================
 
     --color-primary: var(--color-purple);
+    --color-primary--rgb: var(--color-purple--rgb);
     --color-primary-light: var(--color-purple-light);
+    --color-primary-light--rgb: var(--color-purple-light--rgb);
     --color-primary-stroke: var(--color-purple-light);
+    --color-primary-stroke--rgb: var(--color-purple-light--rgb);
 
     --color-secondary: var(--color-green);
+    --color-secondary--rgb: var(--color-green--rgb);
     --color-secondary-light: var(--color-green-light);
+    --color-secondary-light--rgb: var(--color-green-light--rgb);
 
     --color-tertiary: var(--color-brown);
+    --color-tertiary--rgb: var(--color-brown--rgb);
     --color-tertiary-light: var(--color-brown-light);
+    --color-tertiary-light--rgb: var(--color-brown-light--rgb);
     --color-tertiary-stroke: var(--color-brown-green);
+    --color-tertiary-stroke--rgb: var(--color-brown-green--rgb);
 
     --color-text-base: var(--color-black);
+    --color-text-base--rgb: var(--color-black--rgb);
     --color-text-muted: var(--color-black-75);
+    --color-text-muted--rgb: var(--color-black-75--rgb);
     --color-text-inverted: var(--color-white);
+    --color-text-inverted--rgb: var(--color-white--rgb);
 
     --color-background: var(--color-white);
+    --color-background--rgb: var(--color-white--rgb);
     --color-background-highlight: var(--color-green);
+    --color-background-highlight--rgb: var(--color-green--rgb);
     --color-background-inverted: var(--color-black);
+    --color-background-inverted--rgb: var(--color-black--rgb);
 
-    /* ============================================================================== */
-    /* Theme Text
-    /* ============================================================================== */
+    // ==============================================================================
+    // Theme Text
+    // ==============================================================================
 
     --font-size-xs: var(--font-size-12);
     --font-size-sm: var(--font-size-14);
@@ -91,143 +146,143 @@
     --font-size-3xl: var(--font-size-35);
     --font-size-4xl: var(--font-size-54);
 
-    /* ============================================================================== */
-    /* Shadow
-    /* ============================================================================== */
+    // ============================================================================== 
+    // Shadow
+    // ============================================================================== 
 
     --box-shadow-sm: 0px 2px 4px 0px black;
     --box-shadow-lg: 0px 8px 20px 0px black;
 
-    /* ============================================================================== */
-    /* Fonts
-    /* ============================================================================== */
+    // ============================================================================== 
+    // Fonts
+    // ============================================================================== 
 
-    /* Playfair (https:/*google-webfonts-helper.herokuapp.com/fonts/playfair-display?subsets=latin) */
+    // Playfair (https://google-webfonts-helper.herokuapp.com/fonts/playfair-display?subsets=latin) 
 
-    /* playfair-display-regular - latin */
+    // playfair-display-regular - latin 
     @font-face {
       font-family: 'Playfair Display';
       font-style: normal;
       font-weight: 400;
-      src: url('../public/fonts/playfair-display-v30-latin-regular.eot'); /* IE9 Compat Modes */
+      src: url('/fonts/playfair-display-v30-latin-regular.eot'); // IE9 Compat Modes 
       src: local(''),
-        url('../public/fonts/playfair-display-v30-latin-regular.eot?#iefix')
+        url('/fonts/playfair-display-v30-latin-regular.eot?#iefix')
           format('embedded-opentype'),
-        /* IE6-IE8 */
-          url('../public/fonts/playfair-display-v30-latin-regular.woff2')
+        // IE6-IE8 
+          url('/fonts/playfair-display-v30-latin-regular.woff2')
           format('woff2'),
-        /* Super Modern Browsers */
-          url('../public/fonts/playfair-display-v30-latin-regular.woff')
+        // Super Modern Browsers 
+          url('/fonts/playfair-display-v30-latin-regular.woff')
           format('woff'),
-        /* Modern Browsers */
-          url('../public/fonts/playfair-display-v30-latin-regular.ttf')
+        // Modern Browsers 
+          url('/fonts/playfair-display-v30-latin-regular.ttf')
           format('truetype'),
-        /* Safari, Android, iOS */
-          url('../public/fonts/playfair-display-v30-latin-regular.svg#PlayfairDisplay')
-          format('svg'); /* Legacy iOS */
+        // Safari, Android, iOS 
+          url('/fonts/playfair-display-v30-latin-regular.svg#PlayfairDisplay')
+          format('svg'); // Legacy iOS 
     }
 
-    /* playfair-display-700 - latin */
+    // playfair-display-700 - latin 
     @font-face {
       font-family: 'Playfair Display';
       font-style: normal;
       font-weight: 700;
-      src: url('../public/fonts/playfair-display-v30-latin-700.eot'); /* IE9 Compat Modes */
+      src: url('/fonts/playfair-display-v30-latin-700.eot'); // IE9 Compat Modes 
       src: local(''),
-        url('../public/fonts/playfair-display-v30-latin-700.eot?#iefix')
+        url('/fonts/playfair-display-v30-latin-700.eot?#iefix')
           format('embedded-opentype'),
-        /* IE6-IE8 */
-          url('../public/fonts/playfair-display-v30-latin-700.woff2')
+        // IE6-IE8 
+          url('/fonts/playfair-display-v30-latin-700.woff2')
           format('woff2'),
-        /* Super Modern Browsers */
-          url('../public/fonts/playfair-display-v30-latin-700.woff')
+        // Super Modern Browsers 
+          url('/fonts/playfair-display-v30-latin-700.woff')
           format('woff'),
-        /* Modern Browsers */
-          url('../public/fonts/playfair-display-v30-latin-700.ttf')
+        // Modern Browsers 
+          url('/fonts/playfair-display-v30-latin-700.ttf')
           format('truetype'),
-        /* Safari, Android, iOS */
-          url('../public/fonts/playfair-display-v30-latin-700.svg#PlayfairDisplay')
-          format('svg'); /* Legacy iOS */
+        // Safari, Android, iOS 
+          url('/fonts/playfair-display-v30-latin-700.svg#PlayfairDisplay')
+          format('svg'); // Legacy iOS 
     }
 
-    /* playfair-display-italic - latin */
+    // playfair-display-italic - latin 
     @font-face {
       font-family: 'Playfair Display';
       font-style: italic;
       font-weight: 400;
-      src: url('../public/fonts/playfair-display-v30-latin-italic.eot'); /* IE9 Compat Modes */
+      src: url('/fonts/playfair-display-v30-latin-italic.eot'); // IE9 Compat Modes 
       src: local(''),
-        url('../public/fonts/playfair-display-v30-latin-italic.eot?#iefix')
+        url('/fonts/playfair-display-v30-latin-italic.eot?#iefix')
           format('embedded-opentype'),
-        /* IE6-IE8 */
-          url('../public/fonts/playfair-display-v30-latin-italic.woff2')
+        // IE6-IE8 
+          url('/fonts/playfair-display-v30-latin-italic.woff2')
           format('woff2'),
-        /* Super Modern Browsers */
-          url('../public/fonts/playfair-display-v30-latin-italic.woff')
+        // Super Modern Browsers 
+          url('/fonts/playfair-display-v30-latin-italic.woff')
           format('woff'),
-        /* Modern Browsers */
-          url('../public/fonts/playfair-display-v30-latin-italic.ttf')
+        // Modern Browsers 
+          url('/fonts/playfair-display-v30-latin-italic.ttf')
           format('truetype'),
-        /* Safari, Android, iOS */
-          url('../public/fonts/playfair-display-v30-latin-italic.svg#PlayfairDisplay')
-          format('svg'); /* Legacy iOS */
+        // Safari, Android, iOS 
+          url('/fonts/playfair-display-v30-latin-italic.svg#PlayfairDisplay')
+          format('svg'); // Legacy iOS 
     }
 
-    /* playfair-display-700italic - latin */
+    // playfair-display-700italic - latin 
     @font-face {
       font-family: 'Playfair Display';
       font-style: italic;
       font-weight: 700;
-      src: url('../public/fonts/playfair-display-v30-latin-700italic.eot'); /* IE9 Compat Modes */
+      src: url('/fonts/playfair-display-v30-latin-700italic.eot'); // IE9 Compat Modes 
       src: local(''),
-        url('../public/fonts/playfair-display-v30-latin-700italic.eot?#iefix')
+        url('/fonts/playfair-display-v30-latin-700italic.eot?#iefix')
           format('embedded-opentype'),
-        /* IE6-IE8 */
-          url('../public/fonts/playfair-display-v30-latin-700italic.woff2')
+        // IE6-IE8 
+          url('/fonts/playfair-display-v30-latin-700italic.woff2')
           format('woff2'),
-        /* Super Modern Browsers */
-          url('../public/fonts/playfair-display-v30-latin-700italic.woff')
+        // Super Modern Browsers 
+          url('/fonts/playfair-display-v30-latin-700italic.woff')
           format('woff'),
-        /* Modern Browsers */
-          url('../public/fonts/playfair-display-v30-latin-700italic.ttf')
+        // Modern Browsers 
+          url('/fonts/playfair-display-v30-latin-700italic.ttf')
           format('truetype'),
-        /* Safari, Android, iOS */
-          url('../public/fonts/playfair-display-v30-latin-700italic.svg#PlayfairDisplay')
-          format('svg'); /* Legacy iOS */
+        // Safari, Android, iOS 
+          url('/fonts/playfair-display-v30-latin-700italic.svg#PlayfairDisplay')
+          format('svg'); // Legacy iOS 
     }
 
-    /* sf-pro-text (https:/*github.com/blaisck/sfwin) */
+    // sf-pro-text (https://github.com/blaisck/sfwin) 
 
-    /* sf-pro-text-regular */
+    // sf-pro-text-regular 
     @font-face {
       font-family: 'SF Pro Text';
       font-style: normal;
       font-weight: 400;
-      src: url('../public/fonts/sf-pro-text-regular.ttf') format('truetype');
+      src: url('/fonts/sf-pro-text-regular.ttf') format('truetype');
     }
 
-    /* sf-pro-text-700 */
+    // sf-pro-text-700 
     @font-face {
       font-family: 'SF Pro Text';
       font-style: normal;
       font-weight: 700;
-      src: url('../public/fonts/sf-pro-text-700.ttf') format('truetype');
+      src: url('/fonts/sf-pro-text-700.ttf') format('truetype');
     }
 
-    /* sf-pro-text-italic */
+    // sf-pro-text-italic 
     @font-face {
       font-family: 'SF Pro Text';
       font-style: italic;
       font-weight: 400;
-      src: url('../public/fonts/sf-pro-text-italic.ttf') format('truetype');
+      src: url('/fonts/sf-pro-text-italic.ttf') format('truetype');
     }
 
-    /* sf-pro-text-700italic */
+    // sf-pro-text-700italic 
     @font-face {
       font-family: 'SF Pro Text';
       font-style: italic;
       font-weight: 700;
-      src: url('../public/fonts/sf-pro-text-700italic.ttf') format('truetype');
+      src: url('/fonts/sf-pro-text-700italic.ttf') format('truetype');
     }
   }
 }

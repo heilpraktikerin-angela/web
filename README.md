@@ -36,7 +36,7 @@ If you're used to using the `vercel dev` command provided by [Vercel CLI](https:
 
 ### Hide processed `.css` files
 
-```
+```json
 //.vscode/settings.json
 {
   "files.exclude": {

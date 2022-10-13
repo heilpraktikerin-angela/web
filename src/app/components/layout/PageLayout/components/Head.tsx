@@ -1,7 +1,13 @@
 import React from 'react';
+import {Links, Meta} from "@remix-run/react";
 
 const Head: React.FC = () => {
-  return <div>Head</div>;
+    return (
+        <head>
+            <Meta/>
+            <Links/>
+        </head>
+    );
 };
 
 export default Head;
