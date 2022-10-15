@@ -4,8 +4,8 @@
   "scripts": {
     "build": "pnpm run build:css && remix build",
     "build:css": "pnpm run generate:sass:css --style compressed && pnpm run generate:tailwind:css --minify",
-    "dev": "concurrently \"pnpm run dev:css\" \"remix dev\"",
-    "dev:css": "concurrently \"pnpm run generate:sass:css --watch\" \"pnpm run generate:tailwind:css --watch\"",
+    "start": "concurrently \"pnpm run watch:css\" \"remix dev\"",
+    "watch:css": "concurrently \"pnpm run generate:sass:css --watch\" \"pnpm run generate:tailwind:css --watch\"",
     "generate:sass:css": "sass ./src/app/:./src/app/ --no-source-map",
     "generate:tailwind:css": "npx tailwindcss -i ./src/app/styles/root.css -o ./src/app/styles/root.tailwind.css",
     "postinstall": "remix setup node",

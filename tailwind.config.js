@@ -37,8 +37,8 @@ module.exports = {
       green: 'var(--color-green)',
       'green--rgb': withOpacity('--color-green--rgb'),
 
-      'brown-light': 'var(--color-light)',
-      'brown-light--rgb': withOpacity('--color-light--rgb'),
+      'brown-light': 'var(--color-brown-light)',
+      'brown-light--rgb': withOpacity('--color-brown-light--rgb'),
       'brown-green': 'var(--color-brown-green)',
       'brown-green--rgb': withOpacity('--color-brown-green--rgb'),
       brown: 'var(--color-brown)',
