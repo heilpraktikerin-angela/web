@@ -1,20 +1,30 @@
 import React from 'react';
 import Icon from '~/components/icons';
 import { tss } from '~/core/helper/tss';
+import theme from '~/core/theme';
 
 const Navbar: React.FC = () => {
   const navItems: TNavItem[] = [
     {
-      name: 'TODO',
-      href: 'jeff',
+      name: 'Termin vereinbaren',
+      href: '#arrange-appointment',
     },
+    {
+      name: 'Über mich',
+      href: '#about-me',
+    },
+    {
+      name: 'Blog',
+      href: '/blog',
+    },
+    { name: 'Infothek', href: '#faq' },
   ];
 
   return (
     <div className={Container}>
       {/* Left Logo */}
       <div className={LogoContainer}>
-        <Icon.Logo size={48} />
+        <Icon.Logo width={48} height={48} />
         <div className={LogoTextContainer}>
           <p className={LogoTextSubTitle}>Heilpraktikerin</p>
           <h4 className={LogoTextTitle}>Angela Kohrs</h4>
@@ -28,12 +38,21 @@ const Navbar: React.FC = () => {
           <nav>
             <ul className="flex items-center space-x-8">
               {navItems.map((item, i) => (
-                <a href={item.href} key={i}>
+                <a href={item.href} key={i} className={NavItem}>
                   {item.name}
                 </a>
               ))}
             </ul>
           </nav>
+        </div>
+
+        {/* Phone */}
+        <div className="flex items-center ml-6">
+          <Icon.Phone
+            color={theme?.colors['black-75']}
+            width={16}
+            height={16}
+          />
         </div>
       </div>
     </div>
@@ -80,6 +99,10 @@ const LogoTextTitle = tss`
 const RightContainer = tss`
   flex
   items-center
+`;
+
+const NavItem = tss`
+  hover:text-secondary
 `;
 
 type TNavItem = {

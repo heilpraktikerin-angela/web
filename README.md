@@ -23,18 +23,50 @@ Open up [http://localhost:3000](http://localhost:3000) and you should be ready t
 
 If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
 
-## Learnings
+## 🧐 TODO
 
-### Costs of CSS-in-JS Libraries
+<details>
+<summary>Other</summary>
 
-- https://itnext.io/how-to-increase-css-in-js-performance-by-175x-f30ddeac6bce
-- https://daily.dev/blog/why-i-moved-from-styled-components-to-tailwind-css-and-whats-the-future-of-css-in-js
+- [ ] Build EsLint plugin to simplyfy the extracting of inline Tailwind.
+      Before running Plugin
+
+  ```tsx
+  const Container = () => {
+    return (
+      <div className="flex flex-row mx-8 items-center name:Container">
+        {/* .. */}
+      </div>
+    );
+  };
+  ```
+
+  After running Plugin
+
+  ```tsx
+  const Component = () => {
+    return <div className={Container}>{/* .. */}</div>;
+  };
+
+  const Container = tss`flex flex-row mx-8 items-center`;
+  ```
+
+  </details>
+
+## 👨‍🏫 Learnings
+
+### Problems with CSS-in-JS Libraries
+
+- [How to increase CSS-in-JS performance](https://itnext.io/how-to-increase-css-in-js-performance-by-175x-f30ddeac6bce)
+- [Why I moved from styled-components to Tailwind CSS](https://daily.dev/blog/why-i-moved-from-styled-components-to-tailwind-css-and-whats-the-future-of-css-in-js)
 
 ### Sass Preprocessing
 
-- https://sass-lang.com/guide
+- [Basic Preprocessing Guide](https://sass-lang.com/guide)
 
 ### Hide processed `.css` files
+
+#### VS-Code
 
 ```json
 //.vscode/settings.json
@@ -45,3 +77,7 @@ If you're used to using the `vercel dev` command provided by [Vercel CLI](https:
   }
 }
 ```
+
+#### Webstorm/IntelliJ
+
+Not neccessary as it automatically structures them below the `.scss` file.
