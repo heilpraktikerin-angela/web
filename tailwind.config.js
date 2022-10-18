@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     // https://tailwindcss.com/docs/theme#screens
     screens: {
-      mobile: '375px',
+      mobile: '576px',
       tablet: '960px',
       desktop: '1248px',
     },
@@ -96,6 +96,12 @@ module.exports = {
     fontFamily: {
       'playfair-display': `"Playfair Display", "sans-serif"`,
       'sf-pro-text': `"SF Pro Text", "sans-serif"`,
+    },
+    borderRadius: {
+      none: '0',
+      sm: '.25rem', // 4px
+      md: '1rem', // 16px
+      lg: '3rem', // 48px
     },
     // extend: {
     //   // extend default tailwind styles

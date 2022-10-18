@@ -5,15 +5,15 @@ import { default as HeadComponent } from './components/Head';
 import Navbar from './components/Navbar';
 
 const PageLayout: React.FC<TPageLayoutProps> = (props) => {
-  const { children } = props;
+  const { children, showNav = true, showFooter = true } = props;
 
   return (
     <>
       <HeadComponent />
       <body className={Container}>
-        <Navbar />
+        {showNav && <Navbar />}
         <main className={InnerContainer}>{children}</main>
-        <Footer />
+        {showFooter && <Footer />}
       </body>
     </>
   );
@@ -23,6 +23,8 @@ export default PageLayout;
 
 type TPageLayoutProps = {
   children: React.ReactNode;
+  showNav?: boolean;
+  showFooter?: boolean;
 };
 
 const Container = tss`

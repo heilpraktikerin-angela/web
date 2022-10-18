@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => ({
 const Home = () => {
   return (
     <PageLayout>
-      <h1 className="text-2xl tablet:text-4xl font-playfair-display">
+      <h1 className="text-2xl tablet:text-4xl font-playfair-display mt-32">
         Welcome to Remix
       </h1>
       <p>Hello World</p>

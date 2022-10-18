@@ -4,7 +4,7 @@ import PageLayout from '~/components/layout/PageLayout';
 
 const Icons: React.FC = () => {
   return (
-    <PageLayout>
+    <PageLayout showNav={false} showFooter={false}>
       <div className="flex flex-col">
         <Icon.AlertCircle size={48} />
         <Icon.ArrowRight size={48} />
