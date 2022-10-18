@@ -53,6 +53,9 @@ const Navbar: React.FC = () => {
         />
         <p className={PhoneNumberText}>+49 30 067286820</p>
       </div>
+
+      {/* Hamburger */}
+      <div className="tablet:hdd"></div>
     </div>
   );
 };
