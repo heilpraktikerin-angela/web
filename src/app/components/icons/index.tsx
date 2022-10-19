@@ -5,6 +5,7 @@ import Facebook from './components/Facebook';
 import Heart from './components/Heart';
 import Instagram from './components/Instagram';
 import Logo from './components/Logo';
+import Menu from './components/Menu';
 import Minus from './components/Minus';
 import Phone from './components/Phone';
 import PhoneCall from './components/PhoneCall';
@@ -21,6 +22,7 @@ const Icon = {
   Heart,
   Instagram,
   Logo,
+  Menu,
   Minus,
   Phone,
   PhoneCall,
