@@ -1,6 +1,8 @@
 import React from 'react';
 import Icon from '~/components/icons';
 import PageLayout from '~/components/layout/PageLayout';
+import { IconButton } from '~/components/primitive/buttons';
+import theme from '~/core/theme';
 
 const Icons: React.FC = () => {
   return (
@@ -20,6 +22,16 @@ const Icons: React.FC = () => {
         <Icon.Refresh size={48} />
         <Icon.Star size={48} />
         <Icon.Twitter size={48} />
+        <IconButton
+          icon="Menu"
+          iconProps={{ size: 16, color: theme?.colors.primary }}
+          onClick={() => console.log('Clicked')}
+        />
+        <IconButton
+          icon="Menu"
+          iconProps={{ size: 16, color: theme?.colors.primary }}
+          href={'#jeff'}
+        />
       </div>
     </PageLayout>
   );
