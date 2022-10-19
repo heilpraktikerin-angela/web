@@ -6,7 +6,7 @@ const theme: TTheme | undefined = resolveConfig(tailwindConfig).theme as any;
 
 export default theme;
 
-type TTheme = {
+export type TTheme = {
       screens: {
         mobile: string,
         tablet: string,
