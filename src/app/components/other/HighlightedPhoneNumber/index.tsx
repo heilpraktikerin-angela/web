@@ -7,7 +7,7 @@ import type { TTheme } from '~/core/theme';
 import theme from '~/core/theme';
 
 const fontSize = {
-  md: 'text-lg',
+  md: 'text-sm',
   lg: 'text-2xl',
 };
 

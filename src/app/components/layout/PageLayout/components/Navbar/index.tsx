@@ -1,6 +1,6 @@
 import React from 'react';
-import Icon from '~/components/icons';
 import { HighlightedPhoneNumber } from '~/components/other';
+import Logo from '~/components/other/Logo';
 import { tss } from '~/core/helper/tss';
 import NavItems from './NavItems';
 import NavPopover from './NavPopover';
@@ -9,13 +9,7 @@ const Navbar: React.FC = () => {
   return (
     <div className={Container}>
       {/* Left Logo */}
-      <div className={LogoContainer}>
-        <Icon.Logo width={48} height={48} />
-        <div className={LogoTextContainer}>
-          <p className={LogoTextSubTitle}>Heilpraktikerin</p>
-          <h4 className={LogoTextTitle}>Angela Kohrs</h4>
-        </div>
-      </div>
+      <Logo showSubtitle={true} />
 
       {/* Nav Items */}
       <div className={NavContainer}>
@@ -47,30 +41,6 @@ const Container = tss`
   border-b
   border-black-10
   bg-white--rgb/80
-`;
-
-const LogoContainer = tss`
-  flex
-  flex-row
-  items-center
-`;
-
-const LogoTextContainer = tss`
-  flex
-  flex-col
-  ml-4
-`;
-
-const LogoTextSubTitle = tss`
-  text-sm
-  font-sf-pro-text
-  -mb-2
-`;
-
-const LogoTextTitle = tss`
-  text-xl
-  font-playfair-display
-  font-bold
 `;
 
 const NavContainer = tss`
