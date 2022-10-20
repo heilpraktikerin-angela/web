@@ -34,8 +34,8 @@ const NavPopover: React.FC<TNavPopoverProps> = (props) => {
             onClick={() => setIsOpen(false)}
             iconProps={{ size: '24', color: 'currentColor' }}
           />
-          <NavItems />
-          <div className="mt-6 pt-6 border-t border-black">
+          <NavItems horizontal={false} />
+          <div className="mt-6 pt-6  border-t border-black-10">
             <HighlightedPhoneNumber />
           </div>
         </div>

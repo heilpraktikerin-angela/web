@@ -14,7 +14,7 @@
         "tss`([^`]*)",
      ],
      "files.exclude": {
-        "**/*.css": true,
+        // "**/*.css": true,
         "**/*.css.map": true
       }
 }

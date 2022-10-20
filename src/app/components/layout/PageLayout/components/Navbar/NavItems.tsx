@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 import { tss } from '~/core/helper/tss';
 
@@ -17,14 +18,20 @@ const navItems: TNavItem[] = [
   { name: 'Infothek', href: '#faq' },
 ];
 
-const NavItems: React.FC = () => {
+const NavItems: React.FC<TNavItemsProps> = (props) => {
+  const { horizontal = true } = props;
+
   return (
     <nav>
-      <ul className={ULNavList}>
+      <ul
+        className={clsx(horizontal ? ULNavListHorizontal : ULNavListVertical)}
+      >
         {navItems.map((item, i) => (
-          <a href={item.href} key={i} className={NavItem}>
-            {item.name}
-          </a>
+          <li key={i}>
+            <a href={item.href} className={NavItem}>
+              {item.name}
+            </a>
+          </li>
         ))}
       </ul>
     </nav>
@@ -33,10 +40,14 @@ const NavItems: React.FC = () => {
 
 export default NavItems;
 
-const ULNavList = tss`
+const ULNavListHorizontal = tss`
   flex
   items-center
   space-x-8
+`;
+
+const ULNavListVertical = tss`
+  space-y-6
 `;
 
 const NavItem = tss`
@@ -46,4 +57,8 @@ const NavItem = tss`
 type TNavItem = {
   name: string;
   href?: string;
+};
+
+type TNavItemsProps = {
+  horizontal?: boolean;
 };

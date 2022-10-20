@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
 
       {/* Nav Items */}
       <div className={NavContainer}>
-        <NavItems />
+        <NavItems horizontal={true} />
       </div>
 
       {/* Phone Number */}

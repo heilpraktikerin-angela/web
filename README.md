@@ -113,3 +113,11 @@ Not neccessary as it automatically structures them below the `.scss` file.
 ### Tailwind Class Detection in Depth
 
 - [Docs](https://tailwindcss.com/docs/content-configuration#class-detection-in-depth)
+
+### Basic Git Commands
+
+- [Good Overview](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)
+
+### `Inline` Flex
+
+- [Stackoverflow](https://stackoverflow.com/questions/28732703/how-to-make-flex-div-take-only-the-needed-space)

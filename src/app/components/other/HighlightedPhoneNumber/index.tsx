@@ -39,6 +39,7 @@ const HighlightedPhoneNumber: React.FC<THighlightedPhoneNumberProps> = (
           : `whatsapp://send?text=${whatsAppText}&phone=${reducedPhoneNumber}`
       }
     >
+      <span className="sr-only">Telefonnummer</span>
       <Icon.Phone
         color={theme?.colors[color] as any}
         size={iconSize[size]}
@@ -52,6 +53,7 @@ const HighlightedPhoneNumber: React.FC<THighlightedPhoneNumberProps> = (
 export default HighlightedPhoneNumber;
 
 const PhoneContainer = (borderColor: string, backgroundColor: string) => tss`
+  inline-flex
   flex-row
   items-center
   border
