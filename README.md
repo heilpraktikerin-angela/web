@@ -3,14 +3,13 @@
 - [Remix Docs](https://remix.run/docs)
 
 TODO
--> Sass -> Tailwind -> PostCSS
 
 ## Development
 
 To run your Remix app locally, make sure your project's local dependencies are installed:
 
 ```sh
-npm install
+pnpm install
 ```
 
 Afterwards, start the Remix development server like so:
@@ -23,10 +22,32 @@ Open up [http://localhost:3000](http://localhost:3000) and you should be ready t
 
 If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
 
+## 🖌 Stylesheet generation
+
+> -> Sass -> Tailwind
+
+```bash
+concurrently \"pnpm run generate:sass:css --watch\" \"pnpm run generate:tailwind:css --watch\"
+```
+
+The Sass Compiler watches all `.scss` files to give us the opportunity to create complex styles that Tailwind might not be able to handle.
+These files will be compiled to `.css` files which then can be imported in the Component/s.
+
+```ts
+import styles from './blog.css';
+
+export function links() {
+  return [{ rel: 'stylesheet', href: styles }];
+}
+```
+
+The Tailwind Compiler only watches the compiled (from Sass) main `root.css` file
+and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is imported in the root of the project.
+
 ## 🧐 TODO
 
 <details>
-<summary>Other</summary>
+<summary>Workflow optimization</summary>
 
 - [ ] Build EsLint plugin to simplyfy the extracting of inline Tailwind.
       Before running Plugin
@@ -52,6 +73,13 @@ If you're used to using the `vercel dev` command provided by [Vercel CLI](https:
   ```
 
   </details>
+
+## 🔴 Issues
+
+### Tailwind classes not loading when using dynamic classes
+
+- [Stackoverflow](https://stackoverflow.com/questions/71818458/tailwind-classes-not-loading-when-using-dynamic-classes-vue)
+- [Docs](https://tailwindcss.com/docs/content-configuration#class-detection-in-depth)
 
 ## 👨‍🏫 Learnings
 
@@ -81,3 +109,7 @@ If you're used to using the `vercel dev` command provided by [Vercel CLI](https:
 #### Webstorm/IntelliJ
 
 Not neccessary as it automatically structures them below the `.scss` file.
+
+### Tailwind Class Detection in Depth
+
+- [Docs](https://tailwindcss.com/docs/content-configuration#class-detection-in-depth)

@@ -13,6 +13,7 @@ import Plus from './components/Plus';
 import Refresh from './components/Refresh';
 import Star from './components/Star';
 import Twitter from './components/Twitter';
+import X from './components/X';
 
 const Icon = {
   AlertCircle,
@@ -30,6 +31,7 @@ const Icon = {
   Refresh,
   Star,
   Twitter,
+  X,
 };
 
 export default Icon;

@@ -150,8 +150,9 @@ $color-brown: #9c9c77;
     // Shadow
     // ============================================================================== 
 
-    --box-shadow-sm: 0px 2px 4px 0px black;
-    --box-shadow-lg: 0px 8px 20px 0px black;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    --box-shadow-sm: 0px 17px 17px -7px rgba(var(--color-black--rgb), 0.04), 0px 16px 12px -7px rgba(var(--color-black--rgb), 0.05), 0px 1px 3px 0px rgba(var(--color-black--rgb), 0.05);;
+    --box-shadow-lg: 0px 17px 17px -7px rgba(var(--color-black--rgb), 0.04), 0px 36px 28px -7px rgba(var(--color-black--rgb), 0.05), 0px 1px 3px 0px rgba(var(--color-black--rgb), 0.05);
 
     // ============================================================================== 
     // Fonts

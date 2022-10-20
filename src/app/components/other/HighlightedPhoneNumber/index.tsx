@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import Icon from '~/components/icons';
 import { tss } from '~/core/helper/tss';
 import type { TTheme } from '~/core/theme';
 import theme from '~/core/theme';
 
 const fontSize = {
-  md: 'lg',
-  lg: '2xl',
+  md: 'text-lg',
+  lg: 'text-2xl',
 };
 
 const iconSize = {
@@ -22,21 +23,29 @@ const HighlightedPhoneNumber: React.FC<THighlightedPhoneNumberProps> = (
     className,
     size = 'md',
     color = 'black-75',
-    borderColor = 'secondary',
-    backgroundColor = 'brown-light--rgb/20',
+    borderColor = 'border-secondary',
+    backgroundColor = 'bg-brown-light--rgb/20',
   } = props;
+  const phoneNumber = '+49 1578 8080333';
+  const reducedPhoneNumber = phoneNumber.replace(/ /g, '');
+  const whatsAppText = 'Hallo Angela';
 
   return (
-    <div
+    <a
       className={clsx(PhoneContainer(borderColor, backgroundColor), className)}
+      href={
+        isMobile
+          ? `tel:${reducedPhoneNumber}`
+          : `whatsapp://send?text=${whatsAppText}&phone=${reducedPhoneNumber}`
+      }
     >
       <Icon.Phone
         color={theme?.colors[color] as any}
         size={iconSize[size]}
         strokeWidth={2}
       />
-      <p className={PhoneNumberText(fontSize[size], color)}>+49 30 067286820</p>
-    </div>
+      <p className={PhoneNumberText(fontSize[size], color)}>{phoneNumber}</p>
+    </a>
   );
 };
 
@@ -46,27 +55,26 @@ const PhoneContainer = (borderColor: string, backgroundColor: string) => tss`
   flex-row
   items-center
   border
-  border-${borderColor}
+  ${borderColor}
+  ${backgroundColor}
   rounded-sm
   py-2
   px-4
-  bg-${backgroundColor}
   cursor-pointer
 `;
 
 const PhoneNumberText = (fontSize: string, color: string) => tss`
-  font-bold
+  ${fontSize}
+  ${color}
   ml-2
-  text-${color}
-  text-${fontSize}
 `;
 
 type THighlightedPhoneNumberProps = {
   className?: string;
   size?: 'md' | 'lg';
   color?: keyof TTheme['colors'];
-  borderColor?: keyof TTheme['colors'];
+  borderColor?: `border-${keyof TTheme['colors']}`;
   backgroundColor?:
-    | keyof TTheme['colors']
+    | `bg-${keyof TTheme['colors']}`
     | `${keyof TTheme['colors']}/${number}`;
 };
