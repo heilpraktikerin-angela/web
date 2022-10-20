@@ -51,6 +51,7 @@ const ULNavListVertical = tss`
 `;
 
 const NavItem = tss`
+  text-lg
   hover:text-secondary
 `;
 

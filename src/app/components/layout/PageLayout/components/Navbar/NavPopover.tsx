@@ -21,21 +21,21 @@ const NavPopover: React.FC<TNavPopoverProps> = (props) => {
       />
       <Dialog
         as="div"
-        className={clsx('fixed z-50 inset-0', display)}
+        className={clsx(DialogContainer, display)}
         open={isOpen}
         onClose={(value) => setIsOpen(value)}
       >
-        <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm" />
-        <div className="fixed top-4 right-4 w-full max-w-xs bg-white rounded-md shadow-sm p-6 text-base font-semibold text-black">
+        <Dialog.Overlay className={DialogOverlay} />
+        <div className={InnerDialogContainer}>
           <IconButton
             icon="X"
-            className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-black hover:text-secondary"
+            className={CloseButton}
             span={'Mobile Navigation schließen'}
             onClick={() => setIsOpen(false)}
             iconProps={{ size: '24', color: 'currentColor' }}
           />
           <NavItems horizontal={false} />
-          <div className="mt-6 pt-6  border-t border-black-10">
+          <div className={PhoneNumberContainer}>
             <HighlightedPhoneNumber />
           </div>
         </div>
@@ -55,4 +55,43 @@ const Container = tss`
   flex
   items-center
   justify-center
+`;
+
+const DialogContainer = tss`
+  fixed
+  z-50
+  inset-0
+`;
+
+const DialogOverlay = tss`
+  fixed
+  inset-0
+  backdrop-blur-sm
+`;
+
+const InnerDialogContainer = tss`
+  fixed
+  top-4
+  right-4
+  w-full
+  max-w-xs
+  rounded-md
+  p-6
+  bg-white
+  shadow-sm
+`;
+
+const CloseButton = tss`
+  absolute
+  top-5
+  right-5
+  text-black 
+  hover:text-secondary
+`;
+
+const PhoneNumberContainer = tss`
+  mt-6
+  pt-6
+  border-t
+  border-black-10
 `;
