@@ -121,3 +121,7 @@ Not neccessary as it automatically structures them below the `.scss` file.
 ### `Inline` Flex
 
 - [Stackoverflow](https://stackoverflow.com/questions/28732703/how-to-make-flex-div-take-only-the-needed-space)
+
+### `.svg` to `favicon`
+
+- [Nice Generator](https://realfavicongenerator.net/)
