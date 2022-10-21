@@ -11,4 +11,5 @@ module.exports = {
   assetsBuildDirectory: './public/build',
   serverBuildPath: './src/api/index.js',
   // publicPath: "/build/",
+  devServerPort: 8002, // https://github.com/remix-run/remix/issues/2958
 };
