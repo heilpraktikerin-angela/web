@@ -1,26 +1,30 @@
+import clsx from 'clsx';
 import React from 'react';
 import { HighlightedPhoneNumber } from '~/components/other';
 import Logo from '~/components/other/Logo';
 import { tss } from '~/core/helper/tss';
+import { InnerContainerXSpacing } from '../../styles';
 import NavItems from './NavItems';
 import NavPopover from './NavPopover';
 
 const Navbar: React.FC = () => {
   return (
     <div className={Container}>
-      {/* Left Logo */}
-      <Logo showSubtitle={true} />
+      <div className={clsx(InnerContainerXSpacing, InnerContainer)}>
+        {/* Left Logo */}
+        <Logo showSubtitle={true} />
 
-      {/* Nav Items */}
-      <div className={NavContainer}>
-        <NavItems horizontal={true} />
+        {/* Nav Items */}
+        <div className={NavContainer}>
+          <NavItems horizontal={true} />
+        </div>
+
+        {/* Phone Number */}
+        <HighlightedPhoneNumber className={PhoneContainer} size={'md'} />
+
+        {/* Nav Popover */}
+        <NavPopover className="ml-2 -my-1" display="desktop:hidden" />
       </div>
-
-      {/* Phone Number */}
-      <HighlightedPhoneNumber className={PhoneContainer} size={'md'} />
-
-      {/* Nav Popover */}
-      <NavPopover className="ml-2 -my-1" display="desktop:hidden" />
     </div>
   );
 };
@@ -28,19 +32,22 @@ const Navbar: React.FC = () => {
 export default Navbar;
 
 const Container = tss`
+  flex
+  items-center
   fixed
   top-0
   w-full
-  flex
-  items-center
-  justify-between
-  py-4
-  lg:pt-8
-  px-4
-  mobile:px-32
+  h-16
   border-b
   border-black-10
   bg-white--rgb/80
+`;
+
+const InnerContainer = tss`
+  flex
+  items-center
+  justify-between
+  w-full
 `;
 
 const NavContainer = tss`

@@ -1,9 +1,11 @@
 import { LiveReload, Scripts, ScrollRestoration } from '@remix-run/react';
+import clsx from 'clsx';
 import React from 'react';
 import { tss } from '~/core/helper/tss';
 import Footer from './components/Footer';
 import { default as HeadComponent } from './components/Head';
 import Navbar from './components/Navbar';
+import { InnerContainerXSpacing } from './styles';
 
 const PageLayout: React.FC<TPageLayoutProps> = (props) => {
   const { children, showNav = true, showFooter = true } = props;
@@ -19,7 +21,9 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
 
         {/* Content */}
         {showNav && <Navbar />}
-        <main className={InnerContainer}>{children}</main>
+        <main className={clsx(InnerContainerXSpacing, ContentContainer)}>
+          {children}
+        </main>
         {showFooter && <Footer />}
       </body>
     </html>
@@ -35,20 +39,19 @@ type TPageLayoutProps = {
 };
 
 const Container = tss`
-    min-h-screen
-    flex
-    flex-col
-    w-full
-    overflow-x-hidden
-    bg-white
-    text-black
+  flex
+  flex-col
+  w-full
+  min-h-screen
+  overflow-x-hidden
+  bg-white
+  text-black
+  font-sf-pro-text
 `;
 
-const InnerContainer = tss`
-    flex
-    flex-col
-    flex-1
-    h-full
-    px-4
-    mobile:px-32
+const ContentContainer = tss`
+  mt-16
+  pt-2
+  phone:pt-4
+  desktop:pt-8
 `;

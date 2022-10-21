@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import React from 'react';
 import { tss } from '~/core/helper/tss';
+import { InnerContainerXSpacing } from '../../styles';
 import SimpleFooterContent from './SimpleFooterContent';
 
 const Footer: React.FC<TFooterProps> = (props) => {
   const { className } = props;
   return (
     <footer className={clsx(FooterContainer, className)}>
-      <div className={FooterInnerContainer}>
+      <div className={clsx(InnerContainerXSpacing, FooterInnerContainer)}>
         <SimpleFooterContent />
       </div>
     </footer>
@@ -22,13 +23,11 @@ type TFooterProps = {
 
 const FooterContainer = tss`
   mt-16
+  border-t
+  border-black-10
 `;
 
 const FooterInnerContainer = tss`
-  border-t
-  border-black-10
-  pt-10
-  pb-16
-  px-4
-  mobile:px-32
+  pt-8
+  pb-12
 `;

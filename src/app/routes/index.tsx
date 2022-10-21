@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => ({
 const Home = () => {
   return (
     <PageLayout>
-      <div className="grid tablet:grid-cols-2 gap-4 mt-32">
+      <div className="grid tablet:grid-cols-2 gap-4">
         {/* Left */}
         <div>
           <h1 className="text-xl tablet:text-4xl font-playfair-display text-black font-bold">
