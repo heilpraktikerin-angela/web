@@ -59,7 +59,7 @@ const PhoneContainer = (borderColor: string, backgroundColor: string) => tss`
   border
   ${borderColor}
   ${backgroundColor}
-  rounded-sm
+  rounded-xs
   py-2
   px-4
   cursor-pointer

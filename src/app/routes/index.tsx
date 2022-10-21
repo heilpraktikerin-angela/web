@@ -1,5 +1,6 @@
 import PageLayout from '~/components/layout/PageLayout';
 import type { MetaFunction } from '@remix-run/node';
+import Button from '~/components/primitive/buttons/Button';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -10,10 +11,31 @@ export const meta: MetaFunction = () => ({
 const Home = () => {
   return (
     <PageLayout>
-      <h1 className="text-2xl tablet:text-4xl font-playfair-display mt-32">
-        Welcome to Remix
-      </h1>
-      <p>Hello World</p>
+      <div className="grid tablet:grid-cols-2 gap-4 mt-32">
+        {/* Left */}
+        <div>
+          <h1 className="text-xl tablet:text-4xl font-playfair-display text-black font-bold">
+            Praxis für <span className="text-secondary">Naturheilkunde</span>
+          </h1>
+          <h2 className="text-xl tablet:text-3xl font-playfair-display text-black font-bold">
+            Klassische <span className="text-secondary">Homöopathie</span> und{' '}
+            <span className="text-secondary">Phytotherapie</span>
+          </h2>
+        </div>
+
+        {/* Right */}
+        <div>
+          <p className="text-lg test-black">
+            Schonende und sanfte Heilung mit Globuli, basierend auf natürlichen
+            Stoffen.
+          </p>
+          <Button
+            text="Kostenloses Erstgespräch"
+            iconRight="ArrowRight"
+            href={'/'}
+          />
+        </div>
+      </div>
     </PageLayout>
   );
 };

@@ -2,26 +2,34 @@ import React from 'react';
 import Icon from '~/components/icons';
 
 const IconButton: React.FC<TIconButtonProps> = (props) => {
-  const { icon, className, onClick, href, iconProps, span } = props;
+  const { icon, className, onClick, href, iconProps = {}, span } = props;
 
   const IconComponent = Icon[icon];
+  const Content = () => (
+    <>
+      {span != null && <span className="sr-only">{span}</span>}
+      <IconComponent size={16} color={'currentColor'} {...(iconProps as any)} />
+    </>
+  );
 
   if (onClick != null) {
     return (
       <button type="button" onClick={onClick} className={className}>
-        {span != null && <span className="sr-only">{span}</span>}
-        <IconComponent {...(iconProps as any)} />
+        <Content />
       </button>
     );
   } else if (href != null) {
     return (
       <a href={href} className={className}>
-        {span != null && <span className="sr-only">{span}</span>}
-        <IconComponent {...(iconProps as any)} />
+        <Content />
       </a>
     );
   } else {
-    return <IconComponent {...(iconProps as any)} />;
+    return (
+      <div className={className}>
+        <Content />
+      </div>
+    );
   }
 };
 

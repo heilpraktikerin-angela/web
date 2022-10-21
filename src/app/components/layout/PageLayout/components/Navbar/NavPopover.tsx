@@ -15,7 +15,8 @@ const NavPopover: React.FC<TNavPopoverProps> = (props) => {
     <div className={clsx(className, display, Container)}>
       <IconButton
         icon="Menu"
-        iconProps={{ size: 32, color: theme?.colors.black }}
+        className={MenuButton}
+        iconProps={{ size: 32, color: 'currentColor' }}
         onClick={() => setIsOpen(true)}
         span={'Mobile Navigations Leiste öffnen'}
       />
@@ -85,6 +86,11 @@ const CloseButton = tss`
   absolute
   top-5
   right-5
+  text-black 
+  hover:text-secondary
+`;
+
+const MenuButton = tss`
   text-black 
   hover:text-secondary
 `;
