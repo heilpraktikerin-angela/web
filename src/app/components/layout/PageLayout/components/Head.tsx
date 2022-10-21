@@ -4,6 +4,8 @@ import { Links, Meta } from '@remix-run/react';
 const Head: React.FC = () => {
   return (
     <head>
+      {/* Remix for easilty injecting meta and reference links in the head 
+      from a function called in the Page-Component (e.g. https://remix.run/docs/en/v1/api/conventions#meta) */}
       <Meta />
       <Links />
 

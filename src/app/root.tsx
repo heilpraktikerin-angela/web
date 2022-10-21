@@ -1,10 +1,5 @@
 import type { LinksFunction } from '@remix-run/node';
-import {
-  LiveReload,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from '@remix-run/react';
+import { Outlet } from '@remix-run/react';
 import styles from './styles/root.tailwind.css';
 
 // Adds Link html tag rerferencing a specified ressource
@@ -17,12 +12,11 @@ export const links: LinksFunction = () => {
 };
 
 export default function App() {
-  return (
-    <html>
-      <Outlet />
-      <ScrollRestoration />
-      <Scripts />
-      <LiveReload />
-    </html>
-  );
+  // Note: Each Page referenced here (-> all Pages in `/routes`) needs to be wrapped in a PageLayout,
+  // to ensure everything works as expected.
+  // All necessary Components for LiveReloading, linking Links or Meta are referenced in there.
+  // Decided to outsource the PageLayout (Nav, Head, Footer, ..),
+  // instead of building it in here for better customization in the Page Components regarding the Layout
+  // (e.g. hide Navbar, different Navbar, ..)
+  return <Outlet />;
 }
