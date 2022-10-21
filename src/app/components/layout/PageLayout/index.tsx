@@ -50,8 +50,8 @@ const Container = tss`
 `;
 
 const ContentContainer = tss`
-  mt-16
-  pt-2
-  phone:pt-4
-  desktop:pt-8
+  mt-20
+  pt-4
+  phone:pt-8
+  w-full
 `;
