@@ -3,12 +3,6 @@ import { Outlet } from '@remix-run/react';
 import { tss } from '~/core/helper/tss';
 import PageLayout from '~/components/layout/PageLayout';
 
-import styles from './blog.css';
-
-export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
-}
-
 // 'blog.tsx' here is a so called 'Layout Route'
 // which basically wraps around each individual file in the corresponding same named folder (here 'blog')
 // -> Any styles defined here will be applied to all files in the 'blog' folder
