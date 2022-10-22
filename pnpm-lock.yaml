@@ -33,6 +33,7 @@ specifiers:
   shx: ^0.3.4
   tailwindcss: ^3.2.1
   typescript: ^4.7.4
+  ua-parser-js: ^1.0.32
 
 dependencies:
   '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
@@ -69,6 +70,7 @@ devDependencies:
   shx: 0.3.4
   tailwindcss: 3.2.1_postcss@8.4.18
   typescript: 4.8.4
+  ua-parser-js: 1.0.32
 
 packages:
 
@@ -7593,7 +7595,6 @@ packages:
 
   /ua-parser-js/1.0.32:
     resolution: {integrity: sha512-dXVsz3M4j+5tTiovFVyVqssXBu5HM47//YSOeZ9fQkdDKkfzv2v3PP1jmH6FUyPW+yCSn7aBVK1fGGKNhowdDA==}
-    dev: false
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
