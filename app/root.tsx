@@ -1,6 +1,6 @@
 import type { LinksFunction } from '@remix-run/node';
 import { Outlet } from '@remix-run/react';
-import styles from './styles/root.tailwind.css';
+import styles from '~/styles/root.tailwind.css';
 
 // Adds Link html tag rerferencing a specified ressource
 // e.g. Tailwind Styles: <link rel="stylesheet" href="/build/_assets/root.tailwind-XYZ.css">

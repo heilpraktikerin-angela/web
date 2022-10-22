@@ -1,5 +1,5 @@
 import resolveConfig from 'tailwindcss/resolveConfig';
-import tailwindConfig from '../../../../tailwind.config';
+import tailwindConfig from '../../../tailwind.config';
 import type { TColor } from '../types';
 
 const theme: TTheme | undefined = resolveConfig(tailwindConfig).theme as any;
