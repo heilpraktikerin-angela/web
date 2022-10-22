@@ -124,6 +124,10 @@ and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is 
 - [Stackoverflow](https://stackoverflow.com/questions/71818458/tailwind-classes-not-loading-when-using-dynamic-classes-vue)
 - [Docs](https://tailwindcss.com/docs/content-configuration#class-detection-in-depth)
 
+### Netlify deploy Error: Cannot finde module 'x'
+
+- [Stackoverflow](https://stackoverflow.com/questions/67361635/netlify-deploy-error-cannot-find-module-gatsby-plugin-image-graphql-utils)
+
 ## 👨‍🏫 Learnings
 
 ### Problems with CSS-in-JS Libraries
