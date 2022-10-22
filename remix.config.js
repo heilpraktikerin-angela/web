@@ -1,15 +1,13 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
-  serverBuildTarget: 'vercel',
-  // When running locally in development mode, we use the built in remix
-  // server. This does not understand the vercel lambda module format,
-  // so we default back to the standard build output.
+  serverBuildTarget: 'netlify',
   server:
-    process.env.NODE_ENV === 'development' ? undefined : './src/server.js',
+    process.env.NETLIFY || process.env.NETLIFY_LOCAL
+      ? './src/server.js'
+      : undefined,
   ignoredRouteFiles: ['**/.*', '*.css', '*.scss'],
-  appDirectory: './src/app',
-  assetsBuildDirectory: './public/build',
-  serverBuildPath: './src/api/index.js',
+  appDirectory: './~',
+  assetsBuildDirectory: 'public/build',
+  // serverBuildPath: ".netlify/functions-internal/server.js",
   // publicPath: "/build/",
-  devServerPort: 8002, // https://github.com/remix-run/remix/issues/2958
 };
