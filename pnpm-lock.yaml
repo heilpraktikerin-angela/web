@@ -27,6 +27,7 @@ specifiers:
   react: ^18.2.0
   react-device-detect: ^2.2.2
   react-dom: ^18.2.0
+  remix: ^1.7.3
   sass: ^1.55.0
   shx: ^0.3.4
   tailwindcss: ^3.2.1
@@ -62,6 +63,7 @@ devDependencies:
   eslint-plugin-prettier: 4.2.1_aniwkeyvlpmwkidetuytnokvcm
   postcss: 8.4.18
   prettier: 2.7.1
+  remix: 1.7.3
   shx: 0.3.4
   tailwindcss: 3.2.1_postcss@8.4.18
   typescript: 4.8.4
@@ -6769,6 +6771,11 @@ packages:
       '@types/mdast': 3.0.10
       mdast-util-to-hast: 11.3.0
       unified: 10.1.2
+    dev: true
+
+  /remix/1.7.3:
+    resolution: {integrity: sha512-fH/axCW81pWq3EWLZbGa6ql1fpjp/iKUHCdyajWpNI4EcCeSgYvOPz7mqbFxfwzBm1uU1Dh+n8F3hOgh5NNczA==}
+    engines: {node: '>=14'}
     dev: true
 
   /repeat-element/1.1.4:
