@@ -1,19 +1,14 @@
+# Dependencies
 node_modules
 
-.cache
-.env
-.vercel
-.output
-
 # Generated during Build
-/build/
+/.cache
 /public/build
-src/api/index.js
-src/api/index.js.map
-src/api/_assets
+/.netlify
 *.css
+
+# Environment
+.env
 
 # IDE
 .idea
-
-.vercel
