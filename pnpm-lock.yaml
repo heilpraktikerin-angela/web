@@ -10,11 +10,13 @@ specifiers:
   '@remix-run/node': ^1.7.3
   '@remix-run/react': ^1.7.3
   '@remix-run/serve': ^1.7.3
+  '@tailwindcss/typography': ^0.5.7
   '@types/react': ^18.0.15
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.40.1
   '@typescript-eslint/parser': ^5.40.1
   autoprefixer: ^10.4.12
+  clsx: ^1.2.1
   concurrently: ^7.4.0
   cross-env: ^7.0.3
   eslint: ^8.23.1
@@ -23,6 +25,7 @@ specifiers:
   postcss: ^8.4.18
   prettier: ^2.7.1
   react: ^18.2.0
+  react-device-detect: ^2.2.2
   react-dom: ^18.2.0
   sass: ^1.55.0
   shx: ^0.3.4
@@ -36,8 +39,10 @@ dependencies:
   '@remix-run/netlify': 1.7.3_k3dgfduz27oyogwsxz2kkfhzwa
   '@remix-run/node': 1.7.3_biqbaboplfbrettd7655fr4n2y
   '@remix-run/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
+  clsx: 1.2.1
   cross-env: 7.0.3
   react: 18.2.0
+  react-device-detect: 2.2.2_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
   sass: 1.55.0
 
@@ -45,6 +50,7 @@ devDependencies:
   '@remix-run/dev': 1.7.3_sezze4ptun2xkjucuotrbicmpe
   '@remix-run/eslint-config': 1.7.3_lepdvhpfl4ktcue7v6mt34wuv4
   '@remix-run/serve': 1.7.3_biqbaboplfbrettd7655fr4n2y
+  '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.40.1_c4zyna56jjjrggqkyejnaxjxfu
@@ -1839,6 +1845,18 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
+  /@tailwindcss/typography/0.5.7_tailwindcss@3.2.1:
+    resolution: {integrity: sha512-JTTSTrgZfp6Ki4svhPA4mkd9nmQ/j9EfE7SbHJ1cLtthKkpW2OxsFXzSmxbhYbEkfNIyAyhle5p4SYyKRbz/jg==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 3.2.1_postcss@8.4.18
+    dev: true
+
   /@testing-library/dom/8.19.0:
     resolution: {integrity: sha512-6YWYPPpxG3e/xOo6HIWwB/58HukkwIVTOaZ0VwdMVjhRUX/01E4FtQbck9GazOOj7MXHc5RBzMrU86iBJHbI+A==}
     engines: {node: '>=12'}
@@ -2784,6 +2802,11 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
     dev: true
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /collection-visit/1.0.0:
     resolution: {integrity: sha512-lNkKvzEeMBBjUGHZ+q6z9pSJla0KWAQPvtzhEV9+iGyQYG+pBpl7xKDhxoNSOZH2hhv0v5k0y2yAM4o4SjoSkw==}
@@ -5213,8 +5236,16 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash.castarray/4.4.0:
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+    dev: true
+
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+    dev: true
+
+  /lodash.isplainobject/4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
     dev: true
 
   /lodash.merge/4.6.2:
@@ -6526,6 +6557,17 @@ packages:
       unpipe: 1.0.0
     dev: true
 
+  /react-device-detect/2.2.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-zSN1gIAztUekp5qUT/ybHwQ9fmOqVT1psxpSlTn1pe0CO+fnJHKRLOWWac5nKxOxvOpD/w84hk1I+EydrJp7SA==}
+    peerDependencies:
+      react: '>= 0.14.0'
+      react-dom: '>= 0.14.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      ua-parser-js: 1.0.32
+    dev: false
+
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -7544,6 +7586,10 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
+
+  /ua-parser-js/1.0.32:
+    resolution: {integrity: sha512-dXVsz3M4j+5tTiovFVyVqssXBu5HM47//YSOeZ9fQkdDKkfzv2v3PP1jmH6FUyPW+yCSn7aBVK1fGGKNhowdDA==}
+    dev: false
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
