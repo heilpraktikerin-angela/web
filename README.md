@@ -1,9 +1,13 @@
-# Welcome to Remix!
+# 🩺 `Heilpraktikerin Angela Kohrs`
+
+This is a website built with Remix for a client called Angela Kohrs.
+
+## 🔗 Useful Links
 
 - [Remix Docs](https://remix.run/docs)
 - [Netlify Functions](https://www.netlify.com/products/functions/)
 
-## Netlify Setup
+## 📡 Netlify Setup
 
 1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
 
@@ -23,13 +27,9 @@ npm i -g netlify-cli@latest
 netlify login
 ```
 
-3. Create a new site:
+3. Success 🎉
 
-```sh
-netlify init
-```
-
-## Development
+## 🛠 Development
 
 The Remix dev server starts your app in development mode, rebuilding assets on file changes. To start the Remix dev server:
 
@@ -49,7 +49,7 @@ Open up [http://localhost:3000](http://localhost:3000), and you should be ready 
 
 Note: When running the Netlify CLI, file changes will rebuild assets, but you will not see the changes to the page you are on unless you do a browser refresh of the page. Due to how the Netlify CLI builds the Remix App Server, it does not support hot module reloading.
 
-## Deployment
+## 📬 Deployment
 
 There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
 
@@ -61,7 +61,9 @@ netlify deploy --build
 netlify deploy --build --prod
 ```
 
-## 🖌 Stylesheet generation
+## 🤔 Good to Know
+
+### 🖌 Stylesheet generation
 
 > -> Sass -> Tailwind
 
@@ -84,6 +86,8 @@ The Tailwind Compiler only watches the compiled (from Sass) main `root.css` file
 and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is imported in the root of the project.
 
 ## 🧐 TODO
+
+[ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub -> should be enough for now)
 
 <details>
 <summary>Workflow optimization</summary>
@@ -166,4 +170,5 @@ Not neccessary as it automatically structures them below the `.scss` file.
 - [Nice Generator](https://realfavicongenerator.net/)
 
 ### Deploy Remix App to Netlify
+
 - [Docs](https://docs.netlify.com/integrations/frameworks/remix/)

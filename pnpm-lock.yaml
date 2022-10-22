@@ -22,6 +22,7 @@ specifiers:
   eslint: ^8.23.1
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
+  loose-envify: ^1.4.0
   postcss: ^8.4.18
   prettier: ^2.7.1
   react: ^18.2.0
@@ -60,6 +61,7 @@ devDependencies:
   eslint: 8.26.0
   eslint-config-prettier: 8.5.0_eslint@8.26.0
   eslint-plugin-prettier: 4.2.1_aniwkeyvlpmwkidetuytnokvcm
+  loose-envify: 1.4.0
   postcss: 8.4.18
   prettier: 2.7.1
   shx: 0.3.4
