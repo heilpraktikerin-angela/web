@@ -4,6 +4,9 @@ import Button from '~/components/primitive/buttons/Button';
 import { tss } from '~/core/helper/tss';
 import { useWindowSize } from '@react-hook/window-size';
 import theme from '~/core/theme';
+import clsx from 'clsx';
+import { InnerContainerXSpacing } from '~/components/layout/PageLayout/styles';
+import StatisticText from './components/StatisticText';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -16,8 +19,9 @@ const Home = () => {
   const tabletBreakPoint = Number(theme?.screens.tablet.replace('px', ''));
 
   return (
-    <PageLayout>
-      <div className={Container}>
+    <PageLayout innerContainerXSpacing={false}>
+      {/* Title Section */}
+      <div className={clsx(InnerContainerXSpacing, TitleContainer)}>
         {/* Left */}
         <div>
           <h1 className={Title}>
@@ -45,18 +49,40 @@ const Home = () => {
           />
         </div>
       </div>
+
+      {/* Image */}
+      <div className="flex flex-col item-center w-screen">
+        <img
+          src="/images/lavender-fields.jpg"
+          alt="Lavender Fields"
+          loading="lazy"
+        />
+
+        {/* Image Bottom */}
+        <div className="bg-black2 w-full">
+          <div className={clsx(InnerContainerXSpacing, 'flex flex-row py-4')}>
+            <StatisticText title="100+" subtitle="Behandelte Patienten" />
+            <StatisticText
+              title="94%"
+              subtitle="Zufriedene Kunden"
+              className="ml-16"
+            />
+          </div>
+        </div>
+      </div>
     </PageLayout>
   );
 };
 
 export default Home;
 
-const Container = tss`
+const TitleContainer = tss`
   flex
   tablet:flex-row
   tablet:justify-between
   flex-col
   items-center
+  py-8
 `;
 
 const RightContainer = tss`

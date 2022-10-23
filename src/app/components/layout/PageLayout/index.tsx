@@ -8,23 +8,33 @@ import Navbar from './components/Navbar';
 import { InnerContainerXSpacing } from './styles';
 
 const PageLayout: React.FC<TPageLayoutProps> = (props) => {
-  const { children, showNav = true, showFooter = true } = props;
+  const {
+    children,
+    showNav = true,
+    showFooter = true,
+    innerContainerXSpacing = true,
+  } = props;
 
   return (
     <html lang="en">
       <HeadComponent />
       <body className={Container}>
+        {/* Content */}
+        {showNav && <Navbar />}
+        <main
+          className={clsx(
+            innerContainerXSpacing && InnerContainerXSpacing,
+            ContentContainer,
+          )}
+        >
+          {children}
+        </main>
+        {showFooter && <Footer />}
+
         {/* Remix Stuff */}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-
-        {/* Content */}
-        {showNav && <Navbar />}
-        <main className={clsx(InnerContainerXSpacing, ContentContainer)}>
-          {children}
-        </main>
-        {showFooter && <Footer />}
       </body>
     </html>
   );
@@ -36,6 +46,7 @@ type TPageLayoutProps = {
   children: React.ReactNode;
   showNav?: boolean;
   showFooter?: boolean;
+  innerContainerXSpacing?: boolean;
 };
 
 const Container = tss`
@@ -51,7 +62,6 @@ const Container = tss`
 
 const ContentContainer = tss`
   mt-20
-  pt-4
   phone:pt-8
   w-full
 `;

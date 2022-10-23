@@ -7,12 +7,12 @@
     "build:css": "pnpm run generate:sass:css --style compressed && pnpm run generate:tailwind:css --minify",
     "dev": "concurrently \"pnpm run watch:css\" \"remix dev\"",
     "watch:css": "pnpm run clean:css && concurrently \"pnpm run generate:sass:css --watch\" \"pnpm run generate:tailwind:css --watch\"",
-    "clean:css": "shx rm -rf $(ls 'app/**/*.css')",
-    "generate:sass:css": "sass ./app/:./app/ --no-source-map",
-    "generate:tailwind:css": "npx tailwindcss -i ./app/styles/root.css -o ./app/styles/root.tailwind.css",
+    "clean:css": "shx rm -rf $(ls 'src/app/**/*.css')",
+    "generate:sass:css": "sass ./src/app/:./src/app/ --no-source-map",
+    "generate:tailwind:css": "npx tailwindcss -i ./src/app/styles/root.css -o ./src/app/styles/root.tailwind.css",
     "postinstall": "remix setup node",
     "install:clean": "shx rm -rf node_modules && pnpm install",
-    "lint": "npx eslint app/**/*"
+    "lint": "npx eslint src/**/*"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.3",
