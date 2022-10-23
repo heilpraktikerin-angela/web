@@ -40,7 +40,8 @@ const Container = tss`
   h-20
   border-b
   border-black-10
-  bg-white--rgb/80
+  bg-white
+  z-50
 `;
 
 const InnerContainer = tss`

@@ -27,7 +27,13 @@ npm i -g netlify-cli@latest
 netlify login
 ```
 
-3. Success 🎉
+3. Make your local repository known to Netlify via the `Site ID`.
+
+```sh
+netlify init
+# or
+netlify link
+```
 
 ## 🛠 Development
 

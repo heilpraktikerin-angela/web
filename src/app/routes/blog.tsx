@@ -11,9 +11,9 @@ const Blog: React.FC = () => {
   // 'Outlet'
   return (
     <PageLayout>
-      <div className={BlogContainer}>
+      <article className={BlogContainer}>
         <Outlet />
-      </div>
+      </article>
     </PageLayout>
   );
 };
@@ -25,4 +25,9 @@ const BlogContainer = tss`
   tablet:prose-xl
   py-10
   test
+  prose-h1:font-playfair-display
+  prose-h2:font-playfair-display
+  prose-h3:font-sf-pro-text
+  prose-h4:font-playfair-display
+  prose-p:font-sf-pro
 `;

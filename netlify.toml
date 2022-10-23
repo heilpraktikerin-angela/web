@@ -5,7 +5,7 @@
   publish = "public"
 
 [dev]
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npm run dev"
+  command = "npm run dev"
   port = 3000
 
 [[redirects]]

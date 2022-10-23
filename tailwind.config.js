@@ -2,7 +2,7 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./app/**/*.{ts,tsx,jsx,js}'],
+  content: ['./src/app/**/*.{ts,tsx,jsx,js}'],
   theme: {
     // https://tailwindcss.com/docs/theme#screens
     screens: {
@@ -13,7 +13,7 @@ module.exports = {
     colors: {
       // Primitive Colors
       white: 'var(--color-white)',
-      'white--rgb': withOpacity('--white--rgb'),
+      'white--rgb': withOpacity('--color-white--rgb'),
       black: 'var(--color-black)',
       'black--rgb': withOpacity('--color-black'),
       'black-75': 'var(--color-black-75)',
