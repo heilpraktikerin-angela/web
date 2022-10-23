@@ -19,11 +19,6 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     <html lang="en">
       <HeadComponent />
       <body className={Container}>
-        {/* Remix Stuff */}
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-
         {/* Content */}
         {showNav && <Navbar />}
         <main
@@ -35,6 +30,11 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
           {children}
         </main>
         {showFooter && <Footer />}
+
+        {/* Remix Stuff */}
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
       </body>
     </html>
   );
