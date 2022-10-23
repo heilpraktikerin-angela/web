@@ -4,12 +4,14 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production netlify dev",
     "build": "npm run build:css && remix build",
-    "build:css": "npm run generate:sass:css --style compressed && npm run generate:tailwind:css --minify",
+    "build:css": "npm run generate:sass:css:minify && npm run generate:tailwind:css:minify",
     "dev": "concurrently \"npm run watch:css\" \"remix dev\"",
-    "watch:css": "npm run clean:css && concurrently \"npm run generate:sass:css --watch\" \"npm run generate:tailwind:css --watch\"",
+    "watch:css": "npm run clean:css && concurrently \"npm run generate:sass:css:watch\" \"npm run generate:tailwind:css:watch\"",
     "clean:css": "shx rm -rf $(ls 'src/app/**/*.css')",
-    "generate:sass:css": "sass ./src/app/:./src/app/ --no-source-map",
-    "generate:tailwind:css": "npx tailwindcss -i ./src/app/styles/root.css -o ./src/app/styles/root.tailwind.css",
+    "generate:sass:css:watch": "sass ./src/app/:./src/app/ --no-source-map --watch",
+    "generate:sass:css:minify": "sass ./src/app/:./src/app/ --no-source-map --style compressed",
+    "generate:tailwind:css:watch": "npx tailwindcss -i ./src/app/styles/root.css -o ./src/app/styles/root.tailwind.css --watch",
+    "generate:tailwind:css:minify": "npx tailwindcss -i ./src/app/styles/root.css -o ./src/app/styles/root.tailwind.css --minify",
     "postinstall": "remix setup node",
     "install:clean": "shx rm -rf node_modules && npm install",
     "lint": "npx eslint src/**/*"
