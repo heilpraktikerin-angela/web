@@ -1,80 +1,104 @@
 import PageLayout from '~/components/layout/PageLayout';
-import type { MetaFunction } from '@remix-run/node';
 import Button from '~/components/primitive/buttons/Button';
 import { tss } from '~/core/helper/tss';
 import { useWindowSize } from '@react-hook/window-size';
 import theme from '~/core/theme';
 import clsx from 'clsx';
-import { InnerContainerXSpacing } from '~/components/layout/PageLayout/styles';
 import StatisticText from './components/StatisticText';
-
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  title: 'Home',
-  viewport: 'width=device-width,initial-scale=1',
-});
 
 const Home = () => {
   const [width] = useWindowSize();
   const tabletBreakPoint = Number(theme?.screens.tablet.replace('px', ''));
 
   return (
-    <PageLayout innerContainerXSpacing={false}>
-      {/* Title Section */}
-      <div className={clsx(InnerContainerXSpacing, TitleContainer)}>
-        {/* Left */}
-        <div>
-          <h1 className={Title}>
-            Praxis für <span className="text-secondary">Naturheilkunde</span>
-          </h1>
-          <h2 className={Subtitle}>
-            Klassische <span className="text-secondary">Homöopathie</span>{' '}
-            {width > tabletBreakPoint && <br />} und{' '}
-            <span className="text-secondary">Phytotherapie</span>
-          </h2>
-        </div>
+    <PageLayout
+      innerContainerXSpacing={false}
+      excludeNavbarHeightInContent={false}
+    >
+      {({ InnerContainerXSpacing, ContentTopPadding }) => {
+        return (
+          <>
+            {/* Hero Section */}
+            <div className={clsx(ContentTopPadding, HeroContainer)}>
+              {/* Title Section */}
+              <div className={clsx(InnerContainerXSpacing, TitleContainer)}>
+                {/* Left */}
+                <div>
+                  <h1 className={Title}>
+                    Praxis für{' '}
+                    <span className="text-secondary">Naturheilkunde</span>
+                  </h1>
+                  <h2 className={Subtitle}>
+                    Klassische{' '}
+                    <span className="text-secondary">Homöopathie</span>{' '}
+                    {width > tabletBreakPoint && <br />} und{' '}
+                    <span className="text-secondary">Phytotherapie</span>
+                  </h2>
+                </div>
 
-        {/* Right */}
-        <div className={RightContainer}>
-          <p className={Description}>
-            Schonende und sanfte Heilung mit Globuli,{' '}
-            {width > tabletBreakPoint && <br />} basierend auf natürlichen
-            Stoffen.
-          </p>
-          <Button
-            text="Kostenloses Erstgespräch"
-            iconRight="ArrowRight"
-            href={'/'}
-            className={CallToAction}
-          />
-        </div>
-      </div>
+                {/* Right */}
+                <div className={RightContainer}>
+                  <p className={Description}>
+                    Schonende und sanfte Heilung mit Globuli,{' '}
+                    {width > tabletBreakPoint && <br />} basierend auf
+                    natürlichen Stoffen.
+                  </p>
+                  <Button
+                    text="Kostenloses Erstgespräch"
+                    iconRight="ArrowRight"
+                    href={'/'}
+                    className={CallToAction}
+                  />
+                </div>
+              </div>
 
-      {/* Image */}
-      <div className="flex flex-col item-center w-screen">
-        <img
-          src="/images/lavender-fields.jpg"
-          alt="Lavender Fields"
-          loading="lazy"
-        />
+              {/* Bottom Section */}
+              <div className="flex flex-col item-center w-full">
+                {/* Image */}
+                <div className="overflow-hidden rounded-t-lg">
+                  <img
+                    className="w-full object-contain"
+                    src="/images/lavender-fields.jpg"
+                    alt="Lavender Fields"
+                    loading="lazy"
+                  />
+                </div>
 
-        {/* Image Bottom */}
-        <div className="bg-black2 w-full">
-          <div className={clsx(InnerContainerXSpacing, 'flex flex-row py-4')}>
-            <StatisticText title="100+" subtitle="Behandelte Patienten" />
-            <StatisticText
-              title="94%"
-              subtitle="Zufriedene Kunden"
-              className="ml-16"
-            />
-          </div>
-        </div>
-      </div>
+                {/* Image Bottom */}
+                <div className="bg-black2 w-full">
+                  <div
+                    className={clsx(
+                      InnerContainerXSpacing,
+                      'flex flex-row py-4',
+                    )}
+                  >
+                    <StatisticText
+                      title="100+"
+                      subtitle="Behandelte Patienten"
+                    />
+                    <StatisticText
+                      title="94%"
+                      subtitle="Zufriedene Kunden"
+                      className="ml-16"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      }}
     </PageLayout>
   );
 };
 
 export default Home;
+
+const HeroContainer = tss`
+  w-full
+  desktop:h-screen
+  h-auto
+`;
 
 const TitleContainer = tss`
   flex

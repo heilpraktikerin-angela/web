@@ -5,7 +5,11 @@ import { tss } from '~/core/helper/tss';
 import Footer from './components/Footer';
 import { default as HeadComponent } from './components/Head';
 import Navbar from './components/Navbar';
-import { InnerContainerXSpacing } from './styles';
+import {
+  InnerContainerXSpacing,
+  ContentTopMargin,
+  ContentTopPadding,
+} from './styles';
 
 const PageLayout: React.FC<TPageLayoutProps> = (props) => {
   const {
@@ -13,6 +17,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     showNav = true,
     showFooter = true,
     innerContainerXSpacing = true,
+    excludeNavbarHeightInContent = true,
   } = props;
 
   return (
@@ -24,10 +29,17 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
         <main
           className={clsx(
             innerContainerXSpacing && InnerContainerXSpacing,
+            excludeNavbarHeightInContent && ContentTopMargin,
             ContentContainer,
           )}
         >
-          {children}
+          {typeof children === 'function'
+            ? children({
+                ContentTopMargin,
+                ContentTopPadding,
+                InnerContainerXSpacing,
+              })
+            : children}
         </main>
         {showFooter && <Footer />}
 
@@ -43,10 +55,17 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
 export default PageLayout;
 
 type TPageLayoutProps = {
-  children: React.ReactNode;
+  children: React.ReactNode | ((props: ChildrenProps) => React.ReactNode);
   showNav?: boolean;
   showFooter?: boolean;
   innerContainerXSpacing?: boolean;
+  excludeNavbarHeightInContent?: boolean;
+};
+
+type ChildrenProps = {
+  ContentTopMargin: string;
+  ContentTopPadding: string;
+  InnerContainerXSpacing: string;
 };
 
 const Container = tss`
@@ -61,7 +80,5 @@ const Container = tss`
 `;
 
 const ContentContainer = tss`
-  mt-20
-  phone:pt-8
   w-full
 `;
