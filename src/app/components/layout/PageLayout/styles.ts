@@ -8,3 +8,11 @@ export const InnerContainerXSpacing = tss`
   phone:px-6
   tablet:px-8
 `;
+
+export const ContentTopMargin = tss`
+  mt-20
+`;
+
+export const ContentTopPadding = tss`
+  pt-20
+`;
