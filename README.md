@@ -94,6 +94,7 @@ and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is 
 ## 🧐 TODO
 
 [ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub -> should be enough for now)
+[ ] Make mobile navbar smaller (by just showing the Logo) when scrolling down (nice transition)
 
 <details>
 <summary>Workflow optimization</summary>
@@ -133,6 +134,13 @@ and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is 
 ### Netlify deploy Error: Cannot finde module 'x'
 
 - [Stackoverflow](https://stackoverflow.com/questions/67361635/netlify-deploy-error-cannot-find-module-gatsby-plugin-image-graphql-utils)
+
+### Additional (not imported) dependencies for Remix site deploy to Netlify required?
+
+- [Set env in Netlify Build Settings](https://docs.netlify.com/configure-builds/file-based-configuration/#build-settings)
+- [**Issue resolved Thread**](https://answers.netlify.com/t/nuxt-3-deploy-failed-rollup-failed-to-resolve-import-vue/77680/13)
+- [Issue asked Thread](https://answers.netlify.com/t/remix-app-deploy-runtime-handlernotfound-server-handler-is-undefined-or-not-exported/77847/11)
+- [Stackoverflow](https://stackoverflow.com/questions/74165217/additional-not-imported-dependencies-for-remix-site-deploy-to-netlify-required)
 
 ## 👨‍🏫 Learnings
 

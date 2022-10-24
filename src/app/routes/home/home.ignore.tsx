@@ -1,3 +1,4 @@
+import React from 'react';
 import PageLayout from '~/components/layout/PageLayout';
 import Button from '~/components/primitive/buttons/Button';
 import { tss } from '~/core/helper/tss';
@@ -6,9 +7,15 @@ import theme from '~/core/theme';
 import clsx from 'clsx';
 import StatisticText from './components/StatisticText';
 
-const Home = () => {
+const Home: React.FC = () => {
   const [width] = useWindowSize();
-  const tabletBreakPoint = Number(theme?.screens.tablet.replace('px', ''));
+  const [tabletBreakPoint, setTabletBreakPoint] = React.useState(-1);
+
+  // https://stackoverflow.com/questions/46443652/react-16-warning-expected-server-html-to-contain-a-matching-div-in-body
+  React.useEffect(
+    () => setTabletBreakPoint(Number(theme?.screens.tablet.replace('px', ''))),
+    [],
+  );
 
   return (
     <PageLayout
@@ -125,6 +132,8 @@ const Title = tss`
   text-black
   font-bold
   leading-[3.5rem]
+  whitespace-normal
+  desktop:whitespace-nowrap
 `;
 
 const Subtitle = tss`
