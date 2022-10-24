@@ -5,7 +5,7 @@ module.exports = {
     process.env.NETLIFY || process.env.NETLIFY_LOCAL
       ? './src/server.js'
       : undefined,
-  ignoredRouteFiles: ['**/.*', '*.css', '*.scss', '**/components/**'],
+  ignoredRouteFiles: ['**/.ignore.*', '*.css', '*.scss', '**/components/**'],
   devServerPort: 8002, // https://github.com/remix-run/remix/issues/2958
   appDirectory: './src/app',
   assetsBuildDirectory: 'public/build',

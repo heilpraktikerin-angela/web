@@ -1,5 +1,5 @@
 import type { MetaFunction } from '@remix-run/node';
-import Home from './home';
+import Home from './home/home.ignore';
 
 // MetaFuction, .. not exported from './home' because of Highdration issue
 
