@@ -30,7 +30,7 @@ const Home: React.FC = () => {
               {/* Title Section */}
               <div className={clsx(InnerContainerXSpacing, TitleContainer)}>
                 {/* Left */}
-                <div>
+                <div className={LeftContainer}>
                   <h1 className={Title}>
                     Praxis für{' '}
                     <span className="text-secondary">Naturheilkunde</span>
@@ -60,16 +60,9 @@ const Home: React.FC = () => {
               </div>
 
               {/* Bottom Section */}
-              <div className="flex flex-col item-center w-full">
+              <div className="flex flex-1 flex-col justify-end">
                 {/* Image */}
-                <div className="overflow-hidden rounded-t-lg">
-                  <img
-                    className="w-full object-contain"
-                    src="/images/lavender-fields.jpg"
-                    alt="Lavender Fields"
-                    loading="lazy"
-                  />
-                </div>
+                <div className="flex-1 overflow-hidden rounded-t-lg bg-secondary heroImage" />
 
                 {/* Image Bottom */}
                 <div className="bg-black2 w-full">
@@ -102,6 +95,8 @@ const Home: React.FC = () => {
 export default Home;
 
 const HeroContainer = tss`
+  flex
+  flex-col
   w-full
   desktop:h-screen
   h-auto
@@ -109,11 +104,19 @@ const HeroContainer = tss`
 
 const TitleContainer = tss`
   flex
+  w-full
   tablet:flex-row
   tablet:justify-between
   flex-col
   items-center
   py-8
+`;
+
+const LeftContainer = tss`
+  flex
+  flex-col
+  items-center
+  tablet:items-start
 `;
 
 const RightContainer = tss`
