@@ -6,6 +6,7 @@ import { useWindowSize } from '@react-hook/window-size';
 import theme from '~/core/theme';
 import clsx from 'clsx';
 import StatisticText from './components/StatisticText';
+import ContactInfo from './components/ContactInfo';
 
 const Home: React.FC = () => {
   const [width] = useWindowSize();
@@ -84,6 +85,8 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              <ContactInfo className="absolute bottom-0 right-0 tablet:right-8 phone:right-6" />
             </div>
           </>
         );
@@ -109,7 +112,9 @@ const TitleContainer = tss`
   tablet:justify-between
   flex-col
   items-center
-  py-8
+  mobile:pt-16
+  pt-8
+  pb-8
 `;
 
 const LeftContainer = tss`
@@ -155,7 +160,8 @@ const Subtitle = tss`
 `;
 
 const Description = tss`
-  mt-8
+  mt-4
+  mobile:mt-8
   tablet:mt-0
   text-lg
   test-black
