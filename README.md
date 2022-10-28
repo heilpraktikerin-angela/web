@@ -95,6 +95,8 @@ and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is 
 
 [ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub -> should be enough for now)
 [ ] Make mobile navbar smaller (by just showing the Logo) when scrolling down (nice transition)
+[ ] Font in PROD not loading
+[ ] Impressum (based on: https://www.heilpraktikerausbildung-franken.de/impressum)
 
 <details>
 <summary>Workflow optimization</summary>

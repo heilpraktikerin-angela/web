@@ -18,6 +18,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     showFooter = true,
     innerContainerXSpacing = true,
     excludeNavbarHeightInContent = true,
+    mdx = false,
     className,
   } = props;
 
@@ -31,6 +32,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
           className={clsx(
             innerContainerXSpacing && InnerContainerXSpacing,
             excludeNavbarHeightInContent && ContentTopMargin,
+            mdx && MdxWrapper,
             ContentContainer,
             className,
           )}
@@ -40,6 +42,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
                 ContentTopMargin,
                 ContentTopPadding,
                 InnerContainerXSpacing,
+                MdxWrapper,
               })
             : children}
         </main>
@@ -63,12 +66,14 @@ type TPageLayoutProps = {
   innerContainerXSpacing?: boolean;
   excludeNavbarHeightInContent?: boolean;
   className?: string;
+  mdx?: boolean;
 };
 
 type ChildrenProps = {
   ContentTopMargin: string;
   ContentTopPadding: string;
   InnerContainerXSpacing: string;
+  MdxWrapper: string;
 };
 
 const Container = tss`
@@ -84,4 +89,16 @@ const Container = tss`
 
 const ContentContainer = tss`
   w-full
+`;
+
+const MdxWrapper = tss`
+  prose
+  tablet:prose-xl
+  py-10
+  test
+  prose-h1:font-playfair-display
+  prose-h2:font-playfair-display
+  prose-h3:font-sf-pro-text
+  prose-h4:font-playfair-display
+  prose-p:font-sf-pro
 `;

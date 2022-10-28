@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Blog: React.FC = () => {
-  return <div>Jeff</div>;
+  return <div>coming soon</div>;
 };
 
 export default Blog;

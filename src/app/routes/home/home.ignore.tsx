@@ -192,4 +192,5 @@ const Image = tss`
 const ImageBottom = tss`
   bg-black2
   w-full
+  tablet:w-[90%]
 `;
