@@ -25,10 +25,18 @@ type TContactInfoProps = {
 };
 
 const Container = tss`
+  relative
+  tablet:absolute 
+  bottom-0 
+  right-0 
+  tablet:right-8 
+  phone:right-6
   p-8
   bg-secondary
-  rounded-tl-lg
-  rounded-tr-lg
+  tablet:rounded-tl-lg
+  rounded-tl-none
+  tablet:rounded-tr-lg
+  rounded-tr-none
   rounded-br-lg
 `;
 

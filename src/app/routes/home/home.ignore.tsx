@@ -84,9 +84,9 @@ const Home: React.FC = () => {
                     />
                   </div>
                 </div>
-              </div>
 
-              <ContactInfo className="absolute bottom-0 right-0 tablet:right-8 phone:right-6" />
+                <ContactInfo />
+              </div>
             </div>
           </>
         );
@@ -174,6 +174,7 @@ const CallToAction = tss`
 `;
 
 const BottomSection = tss`
+  relative
   flex
   flex-1
   flex-col
