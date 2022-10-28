@@ -1,3 +1,4 @@
+import React from 'react';
 import PageLayout from '~/components/layout/PageLayout';
 import Button from '~/components/primitive/buttons/Button';
 import { tss } from '~/core/helper/tss';
@@ -5,10 +6,17 @@ import { useWindowSize } from '@react-hook/window-size';
 import theme from '~/core/theme';
 import clsx from 'clsx';
 import StatisticText from './components/StatisticText';
+import ContactInfo from './components/ContactInfo';
 
-const Home = () => {
+const Home: React.FC = () => {
   const [width] = useWindowSize();
-  const tabletBreakPoint = Number(theme?.screens.tablet.replace('px', ''));
+  const [tabletBreakPoint, setTabletBreakPoint] = React.useState(-1);
+
+  // https://stackoverflow.com/questions/46443652/react-16-warning-expected-server-html-to-contain-a-matching-div-in-body
+  React.useEffect(
+    () => setTabletBreakPoint(Number(theme?.screens.tablet.replace('px', ''))),
+    [],
+  );
 
   return (
     <PageLayout
@@ -23,7 +31,7 @@ const Home = () => {
               {/* Title Section */}
               <div className={clsx(InnerContainerXSpacing, TitleContainer)}>
                 {/* Left */}
-                <div>
+                <div className={LeftContainer}>
                   <h1 className={Title}>
                     Praxis für{' '}
                     <span className="text-secondary">Naturheilkunde</span>
@@ -53,19 +61,12 @@ const Home = () => {
               </div>
 
               {/* Bottom Section */}
-              <div className="flex flex-col item-center w-full">
+              <div className={BottomSection}>
                 {/* Image */}
-                <div className="overflow-hidden rounded-t-lg">
-                  <img
-                    className="w-full object-contain"
-                    src="/images/lavender-fields.jpg"
-                    alt="Lavender Fields"
-                    loading="lazy"
-                  />
-                </div>
+                <div className={clsx(Image, 'heroImage')} />
 
                 {/* Image Bottom */}
-                <div className="bg-black2 w-full">
+                <div className={ImageBottom}>
                   <div
                     className={clsx(
                       InnerContainerXSpacing,
@@ -73,16 +74,18 @@ const Home = () => {
                     )}
                   >
                     <StatisticText
-                      title="100+"
+                      title="10+"
                       subtitle="Behandelte Patienten"
                     />
                     <StatisticText
                       title="94%"
                       subtitle="Zufriedene Kunden"
-                      className="ml-16"
+                      className="ml-8 tablet:ml-16"
                     />
                   </div>
                 </div>
+
+                <ContactInfo />
               </div>
             </div>
           </>
@@ -95,6 +98,8 @@ const Home = () => {
 export default Home;
 
 const HeroContainer = tss`
+  flex
+  flex-col
   w-full
   desktop:h-screen
   h-auto
@@ -102,11 +107,21 @@ const HeroContainer = tss`
 
 const TitleContainer = tss`
   flex
+  w-full
   tablet:flex-row
   tablet:justify-between
   flex-col
   items-center
-  py-8
+  mobile:pt-16
+  pt-8
+  pb-8
+`;
+
+const LeftContainer = tss`
+  flex
+  flex-col
+  items-center
+  tablet:items-start
 `;
 
 const RightContainer = tss`
@@ -117,6 +132,7 @@ const RightContainer = tss`
 `;
 
 const Title = tss`
+  mb-4
   text-3xl
   tablet:text-4xl
   tablet:text-left
@@ -124,22 +140,29 @@ const Title = tss`
   font-playfair-display
   text-black
   font-bold
-  leading-[3.5rem]
+  leading-[2.5rem]
+  desktop:leading-[3.5rem]
+  whitespace-normal
+  desktop:whitespace-nowrap
 `;
 
 const Subtitle = tss`
   tablet:mt-2
-  text-xl
+  text-2xl
   tablet:text-3xl
   tablet:text-left
   text-center
   font-playfair-display
   text-black
   font-bold
-  leading-10
+  desktop:leading-[2.5rem]
+  leading-[2rem]
 `;
 
 const Description = tss`
+  mt-4
+  mobile:mt-8
+  tablet:mt-0
   text-lg
   test-black
   tablet:text-left
@@ -148,4 +171,25 @@ const Description = tss`
 
 const CallToAction = tss`
   mt-4
+`;
+
+const BottomSection = tss`
+  relative
+  flex
+  flex-1
+  flex-col
+  justify-end
+  mt-8
+`;
+
+const Image = tss`
+  flex-1
+  overflow-hidden
+  rounded-t-lg
+  bg-secondary
+`;
+
+const ImageBottom = tss`
+  bg-black2
+  w-full
 `;

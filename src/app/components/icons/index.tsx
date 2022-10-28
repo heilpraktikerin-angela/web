@@ -5,6 +5,8 @@ import Facebook from './components/Facebook';
 import Heart from './components/Heart';
 import Instagram from './components/Instagram';
 import Logo from './components/Logo';
+import Mail from './components/Mail';
+import MapPin from './components/MapPin';
 import Menu from './components/Menu';
 import Minus from './components/Minus';
 import Phone from './components/Phone';
@@ -23,6 +25,8 @@ const Icon = {
   Heart,
   Instagram,
   Logo,
+  Mail,
+  MapPin,
   Menu,
   Minus,
   Phone,

@@ -18,6 +18,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     showFooter = true,
     innerContainerXSpacing = true,
     excludeNavbarHeightInContent = true,
+    className,
   } = props;
 
   return (
@@ -31,6 +32,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
             innerContainerXSpacing && InnerContainerXSpacing,
             excludeNavbarHeightInContent && ContentTopMargin,
             ContentContainer,
+            className,
           )}
         >
           {typeof children === 'function'
@@ -60,6 +62,7 @@ type TPageLayoutProps = {
   showFooter?: boolean;
   innerContainerXSpacing?: boolean;
   excludeNavbarHeightInContent?: boolean;
+  className?: string;
 };
 
 type ChildrenProps = {

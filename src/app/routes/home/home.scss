@@ -1,0 +1,12 @@
+.heroImage {
+    background-image: url("/images/lavender-fields.jpg");
+    background-position: center center;
+    background-repeat: no-repeat; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    // https://stackoverflow.com/questions/7049875/why-doesnt-height-100-work-to-expand-divs-to-the-screen-height
+    min-height: 320px !important;  
+}
