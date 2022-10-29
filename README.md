@@ -1,4 +1,4 @@
-# 🩺 `Heilpraktikerin Angela Website`
+# 🩺 `Heilpraktikerin Angela`
 
 This website built was built with Remix for a client called `Angela`.
 
@@ -6,6 +6,7 @@ This website built was built with Remix for a client called `Angela`.
 
 `web:`
 [![wakatime](https://wakatime.com/badge/user/aa5a8ce7-1c57-4f26-a159-ea57ec5ea7c1/project/0206e189-973d-485a-868e-4c1a18489a28.svg)](https://wakatime.com/badge/user/aa5a8ce7-1c57-4f26-a159-ea57ec5ea7c1/project/0206e189-973d-485a-868e-4c1a18489a28)
+`design:` ~ 30h
 
 ## 🔗 Useful Links
 
@@ -16,7 +17,8 @@ This website built was built with Remix for a client called `Angela`.
 
 ## 🌝 Design
 
-This website was designed in Figma. The Figma link is for privacy reasons not yet public.
+This website was designed in Figma. The Figma link is for privacy reasons not
+yet public.
 
 ---
 
@@ -48,9 +50,11 @@ This website was designed in Figma. The Figma link is for privacy reasons not ye
 npm run dev
 ```
 
-The Remix dev server starts your app in development mode, rebuilding assets on file changes
+The Remix dev server starts your app in development mode, rebuilding assets on
+file changes
 
-3. Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
+3. Open up [http://localhost:3000](http://localhost:3000), and you should be
+   ready to go!
 
 ---
 
@@ -66,7 +70,8 @@ This website is hosted on [Netlify](https://www.netlify.com/)
 npm i -g netlify-cli
 ```
 
-If you have previously installed the Netlify CLI, you should update it to the latest version:
+If you have previously installed the Netlify CLI, you should update it to the
+latest version:
 
 ```sh
 npm i -g netlify-cli@latest
@@ -88,9 +93,10 @@ netlify link
 
 ### 🎉 Deploy to Netlify
 
-There are two ways to deploy this app to Netlify, you can either go via the Git Repository linked to
-Netlify and have it auto deploy changes to Netlify (**recommended**), or you can deploy your app
-manually. If you've followed the setup instructions already, all you need to do is run this:
+There are two ways to deploy this app to Netlify, you can either go via the Git
+Repository linked to Netlify and have it auto deploy changes to Netlify
+(**recommended**), or you can deploy your app manually. If you've followed the
+setup instructions already, all you need to do is run this:
 
 ```sh
 # Local Preview deployment
@@ -112,9 +118,9 @@ netlify deploy --build --prod
 concurrently \"pnpm run generate:sass:css --watch\" \"pnpm run generate:tailwind:css --watch\"
 ```
 
-The Sass Compiler watches all `.scss` files to give us the opportunity to create complex styles that
-Tailwind might not be able to handle. These files will be compiled to `.css` files which then can be
-imported in the Component/s.
+The Sass Compiler watches all `.scss` files to give us the opportunity to create
+complex styles that Tailwind might not be able to handle. These files will be
+compiled to `.css` files which then can be imported in the Component/s.
 
 ```ts
 import styles from './blog.css';
@@ -124,20 +130,30 @@ export function links() {
 }
 ```
 
-The Tailwind Compiler only watches the compiled (from Sass) main `root.css` file and compiles it to
-`tailwind.root.css` (adds used Tailwind styles, ..) which is imported in the root of the project.
+The Tailwind Compiler only watches the compiled (from Sass) main `root.css` file
+and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is
+imported in the root of the project.
+
+---
 
 ## 🧐 TODO
 
-[ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub -> should be enough for
-now) [ ] Make mobile navbar smaller (by just showing the Logo) when scrolling down (nice transition)
-[ ] Font in PROD not loading [x] Impressum (based on:
-https://www.heilpraktikerausbildung-franken.de/impressum)
+<details>
+<summary>General</summary>
+
+- [ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub ->
+      should be enough for now) [ ] Make mobile navbar smaller (by just showing
+      the Logo) when scrolling down (nice transition)
+- [ ] Font in PROD not loading [x] Impressum (based on:
+      https://www.heilpraktikerausbildung-franken.de/impressum)
+
+</details>
 
 <details>
 <summary>Workflow optimization</summary>
 
-- [ ] Build EsLint plugin to simplyfy the extracting of inline Tailwind. Before running Plugin
+- [ ] Build EsLint plugin to simplyfy the extracting of inline Tailwind. Before
+      running Plugin
 
   ```tsx
   const Container = () => {
@@ -159,7 +175,9 @@ https://www.heilpraktikerausbildung-franken.de/impressum)
   const Container = tss`flex flex-row mx-8 items-center`;
   ```
 
-  </details>
+</details>
+
+---
 
 ## 🔴 Issues
 
@@ -178,6 +196,8 @@ https://www.heilpraktikerausbildung-franken.de/impressum)
 - [**Issue resolved Thread**](https://answers.netlify.com/t/nuxt-3-deploy-failed-rollup-failed-to-resolve-import-vue/77680/13)
 - [Issue asked Thread](https://answers.netlify.com/t/remix-app-deploy-runtime-handlernotfound-server-handler-is-undefined-or-not-exported/77847/11)
 - [Stackoverflow](https://stackoverflow.com/questions/74165217/additional-not-imported-dependencies-for-remix-site-deploy-to-netlify-required)
+
+---
 
 ## 👨‍🏫 Learnings
 

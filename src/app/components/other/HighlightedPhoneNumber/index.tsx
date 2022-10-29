@@ -17,7 +17,7 @@ const iconSize = {
 };
 
 const HighlightedPhoneNumber: React.FC<THighlightedPhoneNumberProps> = (
-  props,
+  props
 ) => {
   const {
     className,

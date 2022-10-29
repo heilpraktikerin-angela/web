@@ -31,7 +31,7 @@ const ArrowRight = React.forwardRef<SVGSVGElement, TArrowRightProps>(
         />
       </svg>
     );
-  },
+  }
 );
 
 ArrowRight.defaultProps = {

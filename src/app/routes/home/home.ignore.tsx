@@ -15,7 +15,7 @@ const Home: React.FC = () => {
   // https://stackoverflow.com/questions/46443652/react-16-warning-expected-server-html-to-contain-a-matching-div-in-body
   React.useEffect(
     () => setTabletBreakPoint(Number(theme?.screens.tablet.replace('px', ''))),
-    [],
+    []
   );
 
   return (
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
                   <div
                     className={clsx(
                       InnerContainerXSpacing,
-                      'flex flex-row py-4',
+                      'flex flex-row py-4'
                     )}
                   >
                     <StatisticText

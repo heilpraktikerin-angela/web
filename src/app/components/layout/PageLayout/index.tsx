@@ -34,7 +34,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
             excludeNavbarHeightInContent && ContentTopMargin,
             mdx && MdxWrapper,
             ContentContainer,
-            className,
+            className
           )}
         >
           {typeof children === 'function'

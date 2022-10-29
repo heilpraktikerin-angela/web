@@ -24,7 +24,7 @@ const PhoneCall = React.forwardRef<SVGSVGElement, TPhoneCallProps>(
         />
       </svg>
     );
-  },
+  }
 );
 
 PhoneCall.defaultProps = {

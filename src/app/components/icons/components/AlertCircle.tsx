@@ -24,7 +24,7 @@ const AlertCircle = React.forwardRef<SVGSVGElement, TAlertCircleProps>(
         />
       </svg>
     );
-  },
+  }
 );
 
 AlertCircle.defaultProps = {
