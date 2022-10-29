@@ -240,3 +240,7 @@ Not neccessary as it automatically structures them below the `.scss` file.
 
 - [Video](https://www.youtube.com/watch?v=2LN3JfopqTY)
 - [Docs](https://prettier.io/docs/en/options.html#prose-wrap)
+
+### Prettier Playground
+
+- [Playground](https://prettier.io/playground/)
