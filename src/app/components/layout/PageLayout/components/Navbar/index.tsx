@@ -2,13 +2,14 @@ import clsx from 'clsx';
 import React from 'react';
 import { HighlightedPhoneNumber } from '~/components/other';
 import Logo from '~/components/other/Logo';
-import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 import { InnerContainerXSpacing } from '../../styles';
 import NavItems from './NavItems';
 import NavPopover from './NavPopover';
 
 const Navbar: React.FC = () => {
+  const contactConfig = window.ENV.contactConfig;
+
   return (
     <div className={Container}>
       <div className={clsx(InnerContainerXSpacing, InnerContainer)}>

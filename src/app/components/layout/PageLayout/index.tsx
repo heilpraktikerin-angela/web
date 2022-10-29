@@ -1,4 +1,9 @@
-import { LiveReload, Scripts, ScrollRestoration } from '@remix-run/react';
+import {
+  LiveReload,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+} from '@remix-run/react';
 import clsx from 'clsx';
 import React from 'react';
 import { tss } from '~/core/helper/tss';
@@ -21,6 +26,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     mdx = false,
     className,
   } = props;
+  const data = useLoaderData();
 
   return (
     <html lang="en">

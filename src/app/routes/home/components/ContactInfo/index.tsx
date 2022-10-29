@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import React from 'react';
-import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 import TextItem from './components/TextItem';
 
 const ContactInfo: React.FC<TContactInfoProps> = (props) => {
   const { className } = props;
+  const contactConfig = window.ENV.contactConfig;
 
   return (
     <div className={clsx(Container, className)}>

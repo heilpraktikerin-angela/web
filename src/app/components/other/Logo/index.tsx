@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
 import Icon from '~/components/icons';
-import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 
 const Logo: React.FC<TLogoProps> = (props) => {
@@ -11,6 +10,7 @@ const Logo: React.FC<TLogoProps> = (props) => {
     href = '/',
     mobileCenter = false,
   } = props;
+  const contactConfig = window.ENV.contactConfig;
 
   return (
     <a

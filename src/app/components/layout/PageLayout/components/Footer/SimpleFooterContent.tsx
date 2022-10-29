@@ -1,10 +1,11 @@
 import React from 'react';
 import Logo from '~/components/other/Logo';
 import TextButton from '~/components/primitive/buttons/TextButton';
-import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 
 const SimpleFooterContent: React.FC = () => {
+  const contactConfig = window.ENV.contactConfig;
+
   return (
     <div className={Container}>
       <div className={TopContainer}>

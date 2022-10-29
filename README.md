@@ -4,9 +4,10 @@ This website built was built with Remix for a client called `Angela`.
 
 #### 🕐 Time spent building this project
 
-`web:`
-[![wakatime](https://wakatime.com/badge/user/aa5a8ce7-1c57-4f26-a159-ea57ec5ea7c1/project/0206e189-973d-485a-868e-4c1a18489a28.svg)](https://wakatime.com/badge/user/aa5a8ce7-1c57-4f26-a159-ea57ec5ea7c1/project/0206e189-973d-485a-868e-4c1a18489a28)
-`design:` ~ 30h
+- `web:`
+  [![wakatime](https://wakatime.com/badge/user/aa5a8ce7-1c57-4f26-a159-ea57ec5ea7c1/project/0206e189-973d-485a-868e-4c1a18489a28.svg)](https://wakatime.com/badge/user/aa5a8ce7-1c57-4f26-a159-ea57ec5ea7c1/project/0206e189-973d-485a-868e-4c1a18489a28)
+
+- `design + concept:` ~ 30h
 
 ## 🔗 Useful Links
 
