@@ -1,4 +1,4 @@
-import { tss } from "~/core/helper/tss";
+import { tss } from '~/core/helper/tss';
 
 export const InnerContainerXSpacing = tss`
   max-w-6xl

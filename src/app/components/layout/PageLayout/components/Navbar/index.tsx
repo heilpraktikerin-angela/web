@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { HighlightedPhoneNumber } from '~/components/other';
 import Logo from '~/components/other/Logo';
+import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 import { InnerContainerXSpacing } from '../../styles';
 import NavItems from './NavItems';
@@ -20,7 +21,11 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Phone Number */}
-        <HighlightedPhoneNumber className={PhoneContainer} size={'md'} />
+        <HighlightedPhoneNumber
+          phoneNumber={contactConfig.phoneNumber}
+          className={PhoneContainer}
+          size={'md'}
+        />
 
         {/* Nav Popover */}
         <NavPopover className="ml-2 -my-1" display="desktop:hidden" />

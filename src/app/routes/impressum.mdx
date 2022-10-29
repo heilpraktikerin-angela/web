@@ -1,57 +1,33 @@
 ---
-title: First Post
-date: 2022-01-16
 meta:
-  title: First Post
+  title: Impressum
 ---
 
 import PageLayout from '~/components/layout/PageLayout';
+import { contactConfig } from '~/core/config';
 
 <PageLayout mdx={true}>
 
-# {attributes.title}
+# Impressum
 
-### Quos unus
+---
 
-Lorem markdownum domini foramina refrixit me quod, nec Achaia toto mox nemus
-modo. Contende turba, auras sed balatum per cristae, eques. Quae mille quid, vix
-per Nereusque protinus numerum.
+### Kontakt
 
-## Sinu mentem me terreno mediis Phlegraeis maesta
+{contactConfig.address.street} {contactConfig.address.streetNumber} <br/>
+{contactConfig.address.postCode} {contactConfig.address.city} <br/> Telefon:
+{contactConfig.phoneNumber} <br/> Email: {contactConfig.email} <br/> Homepage:
+{contactConfig.homepage} <br/>
 
-Modo ipse simul preces timidumque tollit caelo sumus _laeva_ tellus fratri
-fidibusque videt. Mox Iove! Ore in nuda.
+### Haftungshinweis
 
-1. Sic herbida illa
-2. Vestigia in nitidum fronte Regi Anaphen illud
-3. Mecum factas in recenti tauros meritis modo
-4. Sinistro ore audaci et
+Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer
+Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
 
-Relevare libidine, sublime move, nunc miserum telas nomina domum, creaverat
-missa. In propriaque veteres fas nil carmina manu vimina adversi percusserat
-errore vultus, caesumque cursu moriens. Diversa qua nactusque inrita tua
-fatigat, terribilem aequos oculos! Posuere subduxit an Hypanis numquam. Humo
-suas venatrixque Cyllene lingua et minuant.
+### Copyright
 
-## In putares cedit nebula inportuna in pars
-
-Amorem duplicataque vomit pendentia maior nuper et attulit induruit inanes ait
-sol hominis exserere arbore. Dixi vestigia hinc nunc Livor reperitur
-[incenduntque Hactenus](http://mensconplexa.io/crate); aut tum ut communia.
-Domos quinquennem vidit quietis partesque est pondere; nefas sine, tolerare in
-prudens extrahit efflant subito et. Ut illum Opheltes, esse orantem audita. Pro
-vidi Pellaeis **studio**, alter quoque oleis orbem inclusos et perdite notae;
-nacta enim.
-
-1. Est contrahit posset natus deus quam ante
-2. Lacrimae dira
-3. Pelasgi sunt
-4. Eurus sui tumulos mille
-5. Deus temptaminis vobis
-
-Copia redeunt luctibus melius diversaeque pastor alimenta concussit. Feri atque,
-aristas ima errat divitias aethere. Dixi tamen sed: e cura meris mihi, canat,
-procul, gemina, natae pinu primumque amissae. Ignaroque lumina! Tori fecere
-palmas, te ad, usum ubi tuos tam factis.
+Alle hier veröffentlichten Texte und Abbildungen dürfen nur mit ausdrücklicher Genehmigung von
+{contactConfig.firstName} {contactConfig.lastName} nachgedruckt, vervielfältigt oder in
+elektronischen Medien publiziert werden.
 
 </PageLayout>

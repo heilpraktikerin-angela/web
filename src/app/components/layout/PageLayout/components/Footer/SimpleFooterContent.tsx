@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '~/components/other/Logo';
+import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 
 const SimpleFooterContent: React.FC = () => {
@@ -7,7 +8,9 @@ const SimpleFooterContent: React.FC = () => {
     <div className={Container}>
       <Logo showSubtitle={false} />
       <p className={CopyrightText}>
-        &copy; {new Date().getFullYear()} Angela Kohrs | All rights reserved.
+        &copy; {new Date().getFullYear()}{' '}
+        {`${contactConfig.firstName} ${contactConfig.lastName}`} | All rights
+        reserved.
       </p>
     </div>
   );

@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 import Icon from '~/components/icons';
+import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 
 const Logo: React.FC<TLogoProps> = (props) => {
@@ -10,7 +11,9 @@ const Logo: React.FC<TLogoProps> = (props) => {
       <Icon.Logo size={48} />
       <div className={LogoTextContainer}>
         {showSubtitle && <p className={LogoTextSubTitle}>Heilpraktikerin</p>}
-        <h4 className={LogoTextTitle}>Angela Kohrs</h4>
+        <h4
+          className={LogoTextTitle}
+        >{`${contactConfig.firstName} ${contactConfig.lastName}`}</h4>
       </div>
     </a>
   );
