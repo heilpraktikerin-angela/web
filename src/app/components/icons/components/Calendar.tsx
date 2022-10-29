@@ -24,7 +24,7 @@ const Calendar = React.forwardRef<SVGSVGElement, TCalendarProps>(
         />
       </svg>
     );
-  },
+  }
 );
 
 Calendar.defaultProps = {

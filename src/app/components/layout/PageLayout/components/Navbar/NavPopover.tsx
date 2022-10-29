@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 import { IconButton } from '~/components/primitive/buttons';
-import theme from '~/core/theme';
 import { Dialog } from '@headlessui/react';
 import NavItems from './NavItems';
 import { tss } from '~/core/helper/tss';
 import { HighlightedPhoneNumber } from '~/components/other';
+import { contactConfig } from '~/core/config';
 
 const NavPopover: React.FC<TNavPopoverProps> = (props) => {
   const { display = 'tablet:hidden', className } = props;
@@ -37,7 +37,7 @@ const NavPopover: React.FC<TNavPopoverProps> = (props) => {
           />
           <NavItems horizontal={false} />
           <div className={PhoneNumberContainer}>
-            <HighlightedPhoneNumber />
+            <HighlightedPhoneNumber phoneNumber={contactConfig.phoneNumber} />
           </div>
         </div>
       </Dialog>

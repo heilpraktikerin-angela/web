@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
+import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 import TextItem from './components/TextItem';
 
@@ -10,9 +11,9 @@ const ContactInfo: React.FC<TContactInfoProps> = (props) => {
     <div className={clsx(Container, className)}>
       <h2 className={Title}>Kontakt</h2>
       <div className={ListContainer}>
-        <TextItem icon="Phone" text="+49 1578 8080333" />
-        <TextItem icon="Mail" text="hp.angela.kohrs@gmail.com" />
-        <TextItem icon="MapPin" text="Herzogenaurach / Erlangen" />
+        <TextItem icon="Phone" text={contactConfig.phoneNumber} />
+        <TextItem icon="Mail" text={contactConfig.email} />
+        <TextItem icon="MapPin" text={contactConfig.surrounding} />
       </div>
     </div>
   );
@@ -28,7 +29,8 @@ const Container = tss`
   relative
   tablet:absolute 
   bottom-0 
-  right-0 
+  right-0
+  min-w-[20rem]
   tablet:right-8 
   phone:right-6
   p-8

@@ -12,7 +12,8 @@
     "generate:tailwind:css": "npx tailwindcss -i ./src/app/styles/root.css -o ./src/app/styles/root.tailwind.css",
     "postinstall": "remix setup node",
     "install:clean": "shx rm -rf node_modules && pnpm install",
-    "lint": "npx eslint src/**/*"
+    "lint": "npx eslint src/**/*",
+    "prettier": "prettier --config .prettierrc --write \"**/*.{js,ts,tsx,mdx,md}\""
   },
   "dependencies": {
     "@headlessui/react": "^1.7.3",

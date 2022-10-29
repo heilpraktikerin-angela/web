@@ -1,6 +1,5 @@
 import React from 'react';
 import { Outlet } from '@remix-run/react';
-import { tss } from '~/core/helper/tss';
 import PageLayout from '~/components/layout/PageLayout';
 
 // 'blog.tsx' here is a so called 'Layout Route'
@@ -10,24 +9,14 @@ import PageLayout from '~/components/layout/PageLayout';
 const Blog: React.FC = () => {
   // 'Outlet'
   return (
-    <PageLayout>
-      <article className={BlogContainer}>
-        <Outlet />
-      </article>
+    <PageLayout mdx={false}>
+      {({ MdxWrapper }) => (
+        <article className={MdxWrapper}>
+          <Outlet />
+        </article>
+      )}
     </PageLayout>
   );
 };
 
 export default Blog;
-
-const BlogContainer = tss`
-  prose
-  tablet:prose-xl
-  py-10
-  test
-  prose-h1:font-playfair-display
-  prose-h2:font-playfair-display
-  prose-h3:font-sf-pro-text
-  prose-h4:font-playfair-display
-  prose-p:font-sf-pro
-`;

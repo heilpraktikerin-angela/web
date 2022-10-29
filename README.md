@@ -1,13 +1,68 @@
-# 🩺 `Heilpraktikerin Angela Kohrs`
+# 🩺 `Heilpraktikerin Angela`
 
-This is a website built with Remix for a client called Angela Kohrs.
+This website built was built with Remix for a client called `Angela`.
+
+#### 🕐 Time spent building this project
+
+`web:`
+[![wakatime](https://wakatime.com/badge/user/aa5a8ce7-1c57-4f26-a159-ea57ec5ea7c1/project/0206e189-973d-485a-868e-4c1a18489a28.svg)](https://wakatime.com/badge/user/aa5a8ce7-1c57-4f26-a159-ea57ec5ea7c1/project/0206e189-973d-485a-868e-4c1a18489a28)
+`design:` ~ 30h
 
 ## 🔗 Useful Links
 
 - [Remix Docs](https://remix.run/docs)
 - [Netlify Functions](https://www.netlify.com/products/functions/)
 
-## 📡 Netlify Setup
+---
+
+## 🌝 Design
+
+This website was designed in Figma. The Figma link is for privacy reasons not
+yet public.
+
+---
+
+## 🛠 Local Development
+
+1. Setup environment variables:
+
+   ```env
+   # .env.local
+
+   # Note: I wasn't allowed to publicly share the contact information on Github.
+   # This was a condition for making the code available open source
+   # Don't ask me why because the website is public anyway but who cares lol.
+   CONTACT_PHONE_NUMBER="+12 3456 789012"
+   CONTACT_FIRST_NAME="Jeff"
+   CONTACT_LAST_NAME="Rocks"
+   CONTACT_ADDRESS_STREET="Muster-Street"
+   CONTACT_ADDRESS_STREET_NUMBER=3
+   CONTACT_ADDRESS_POST_CODE=12345
+   CONTACT_ADDRESS_CITY="Jeffhausen"
+   CONTACT_SURROUNDING="Jeffhausen / Jeffcity"
+   CONTACT_EMAIL="jeff@jeff.com"
+   CONTACT_HOMEPAGE="https://www.jeff.de"
+   ```
+
+2. Start the Remix dev server:
+
+```sh
+npm run dev
+```
+
+The Remix dev server starts your app in development mode, rebuilding assets on
+file changes
+
+3. Open up [http://localhost:3000](http://localhost:3000), and you should be
+   ready to go!
+
+---
+
+## 📬 Deployment
+
+This website is hosted on [Netlify](https://www.netlify.com/)
+
+### 📡 Netlify Setup
 
 1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
 
@@ -15,7 +70,8 @@ This is a website built with Remix for a client called Angela Kohrs.
 npm i -g netlify-cli
 ```
 
-If you have previously installed the Netlify CLI, you should update it to the latest version:
+If you have previously installed the Netlify CLI, you should update it to the
+latest version:
 
 ```sh
 npm i -g netlify-cli@latest
@@ -35,37 +91,22 @@ netlify init
 netlify link
 ```
 
-## 🛠 Development
+### 🎉 Deploy to Netlify
 
-The Remix dev server starts your app in development mode, rebuilding assets on file changes. To start the Remix dev server:
-
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
-
-The Netlify CLI builds a production version of your Remix App Server and splits it into Netlify Functions that run locally. This includes any custom Netlify functions you've developed. The Netlify CLI runs all of this in its development mode.
+There are two ways to deploy this app to Netlify, you can either go via the Git
+Repository linked to Netlify and have it auto deploy changes to Netlify
+(**recommended**), or you can deploy your app manually. If you've followed the
+setup instructions already, all you need to do is run this:
 
 ```sh
-netlify dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
-
-Note: When running the Netlify CLI, file changes will rebuild assets, but you will not see the changes to the page you are on unless you do a browser refresh of the page. Due to how the Netlify CLI builds the Remix App Server, it does not support hot module reloading.
-
-## 📬 Deployment
-
-There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
-
-```sh
-# preview deployment
+# Local Preview deployment
 netlify deploy --build
 
-# production deployment
+# Local Production deployment
 netlify deploy --build --prod
 ```
+
+---
 
 ## 🤔 Good to Know
 
@@ -77,8 +118,9 @@ netlify deploy --build --prod
 concurrently \"pnpm run generate:sass:css --watch\" \"pnpm run generate:tailwind:css --watch\"
 ```
 
-The Sass Compiler watches all `.scss` files to give us the opportunity to create complex styles that Tailwind might not be able to handle.
-These files will be compiled to `.css` files which then can be imported in the Component/s.
+The Sass Compiler watches all `.scss` files to give us the opportunity to create
+complex styles that Tailwind might not be able to handle. These files will be
+compiled to `.css` files which then can be imported in the Component/s.
 
 ```ts
 import styles from './blog.css';
@@ -89,18 +131,38 @@ export function links() {
 ```
 
 The Tailwind Compiler only watches the compiled (from Sass) main `root.css` file
-and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is imported in the root of the project.
+and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is
+imported in the root of the project.
+
+---
 
 ## 🧐 TODO
 
-[ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub -> should be enough for now)
-[ ] Make mobile navbar smaller (by just showing the Logo) when scrolling down (nice transition)
+<details>
+<summary>Features</summary>
+
+- [ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub ->
+      should be enough for now) [ ] Make mobile navbar smaller (by just showing
+      the Logo) when scrolling down (nice transition)
+- [ ] Font in PROD not loading
+- [ ] Google Analytics
+- [x] Impressum (based on:
+      https://www.heilpraktikerausbildung-franken.de/impressum)
+
+</details>
+
+<details>
+<summary>Bug fixes</summary>
+
+- [ ] Make Navigation Menu working again
+
+</details>
 
 <details>
 <summary>Workflow optimization</summary>
 
-- [ ] Build EsLint plugin to simplyfy the extracting of inline Tailwind.
-      Before running Plugin
+- [ ] Build EsLint plugin to simplyfy the extracting of inline Tailwind. Before
+      running Plugin
 
   ```tsx
   const Container = () => {
@@ -122,7 +184,9 @@ and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is 
   const Container = tss`flex flex-row mx-8 items-center`;
   ```
 
-  </details>
+</details>
+
+---
 
 ## 🔴 Issues
 
@@ -141,6 +205,8 @@ and compiles it to `tailwind.root.css` (adds used Tailwind styles, ..) which is 
 - [**Issue resolved Thread**](https://answers.netlify.com/t/nuxt-3-deploy-failed-rollup-failed-to-resolve-import-vue/77680/13)
 - [Issue asked Thread](https://answers.netlify.com/t/remix-app-deploy-runtime-handlernotfound-server-handler-is-undefined-or-not-exported/77847/11)
 - [Stackoverflow](https://stackoverflow.com/questions/74165217/additional-not-imported-dependencies-for-remix-site-deploy-to-netlify-required)
+
+---
 
 ## 👨‍🏫 Learnings
 
@@ -194,3 +260,20 @@ Not neccessary as it automatically structures them below the `.scss` file.
 ### Absolute Positioning Inside Relative Positioning
 
 - [Blog](https://css-tricks.com/absolute-positioning-inside-relative-positioning/)
+
+### Environment Variables - Remix
+
+- [Docs](https://remix.run/docs/en/v1/guides/envvars)
+
+### Prose Wrap
+
+- [Video](https://www.youtube.com/watch?v=2LN3JfopqTY)
+- [Docs](https://prettier.io/docs/en/options.html#prose-wrap)
+
+### Prettier Playground
+
+- [Playground](https://prettier.io/playground/)
+
+### Remix Examples
+
+- [Github](https://github.com/remix-run/examples/tree/main/google-analytics)

@@ -1,3 +1,3 @@
-import HighlightedPhoneNumber from "./HighlightedPhoneNumber";
+import HighlightedPhoneNumber from './HighlightedPhoneNumber';
 
-export {HighlightedPhoneNumber};
+export { HighlightedPhoneNumber };

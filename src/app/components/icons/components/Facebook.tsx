@@ -21,7 +21,7 @@ const Facebook = React.forwardRef<SVGSVGElement, TFacebookProps>(
         />
       </svg>
     );
-  },
+  }
 );
 
 Facebook.defaultProps = {

@@ -17,7 +17,7 @@ const iconSize = {
 };
 
 const HighlightedPhoneNumber: React.FC<THighlightedPhoneNumberProps> = (
-  props,
+  props
 ) => {
   const {
     className,
@@ -25,8 +25,8 @@ const HighlightedPhoneNumber: React.FC<THighlightedPhoneNumberProps> = (
     color = 'black-75',
     borderColor = 'border-secondary',
     backgroundColor = 'bg-brown-light--rgb/20',
+    phoneNumber,
   } = props;
-  const phoneNumber = '+49 1578 8080333';
   const reducedPhoneNumber = phoneNumber.replace(/ /g, '');
   const whatsAppText = 'Hallo Angela';
 
@@ -79,4 +79,5 @@ type THighlightedPhoneNumberProps = {
   backgroundColor?:
     | `bg-${keyof TTheme['colors']}`
     | `${keyof TTheme['colors']}/${number}`;
+  phoneNumber: string;
 };
