@@ -5,11 +5,29 @@ import { contactConfig } from '~/core/config';
 import { tss } from '~/core/helper/tss';
 
 const Logo: React.FC<TLogoProps> = (props) => {
-  const { className, showSubtitle = true, href = '/' } = props;
+  const {
+    className,
+    showSubtitle = true,
+    href = '/',
+    mobileCenter = false,
+  } = props;
+
   return (
-    <a href={href} className={clsx(LogoContainer, className)}>
+    <a
+      href={href}
+      className={clsx(
+        LogoContainer,
+        mobileCenter && LogoContainerMobileCenter,
+        className
+      )}
+    >
       <Icon.Logo size={48} />
-      <div className={LogoTextContainer}>
+      <div
+        className={clsx(
+          LogoTextContainer,
+          mobileCenter && LogoTextContainerMobileCenter
+        )}
+      >
         {showSubtitle && <p className={LogoTextSubTitle}>Heilpraktikerin</p>}
         <h4
           className={LogoTextTitle}
@@ -25,6 +43,7 @@ type TLogoProps = {
   className?: string;
   showSubtitle?: boolean;
   href?: string;
+  mobileCenter?: boolean;
 };
 
 const LogoContainer = tss`
@@ -34,10 +53,20 @@ const LogoContainer = tss`
   cursor-pointer
 `;
 
+const LogoContainerMobileCenter = tss`
+  flex-col
+  mobile:flex-row
+`;
+
 const LogoTextContainer = tss`
   flex
   flex-col
   ml-4
+`;
+
+const LogoTextContainerMobileCenter = tss`
+  mt-2
+  mobile:mt-0
 `;
 
 const LogoTextSubTitle = tss`

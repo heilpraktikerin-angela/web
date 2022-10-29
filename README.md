@@ -139,13 +139,22 @@ imported in the root of the project.
 ## 🧐 TODO
 
 <details>
-<summary>General</summary>
+<summary>Features</summary>
 
 - [ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub ->
       should be enough for now) [ ] Make mobile navbar smaller (by just showing
       the Logo) when scrolling down (nice transition)
-- [ ] Font in PROD not loading [x] Impressum (based on:
+- [ ] Font in PROD not loading
+- [ ] Google Analytics
+- [x] Impressum (based on:
       https://www.heilpraktikerausbildung-franken.de/impressum)
+
+</details>
+
+<details>
+<summary>Bug fixes</summary>
+
+- [ ] Make Navigation Menu working again
 
 </details>
 
@@ -264,3 +273,7 @@ Not neccessary as it automatically structures them below the `.scss` file.
 ### Prettier Playground
 
 - [Playground](https://prettier.io/playground/)
+
+### Remix Examples
+
+- [Github](https://github.com/remix-run/examples/tree/main/google-analytics)
