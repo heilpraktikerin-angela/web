@@ -191,6 +191,10 @@ imported in the root of the project.
 
 ## 🔴 Issues
 
+### Website elements and fonts are too small in mobile devices
+
+- [Stackoverflow](https://stackoverflow.com/questions/27855154/website-elements-and-fonts-are-too-small-in-mobile-devices)
+
 ### Tailwind classes not loading when using dynamic classes
 
 - [Stackoverflow](https://stackoverflow.com/questions/71818458/tailwind-classes-not-loading-when-using-dynamic-classes-vue)

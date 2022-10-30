@@ -1,9 +1,15 @@
 import React from 'react';
-import type { LinksFunction } from '@remix-run/node';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { Outlet, useLoaderData } from '@remix-run/react';
 import styles from '~/styles/root.tailwind.css';
 import { RootContext } from './core/context';
+
+// MetaFuction, .. not exported from './home' because of Highdration issue
+export const meta: MetaFunction = () => ({
+  charset: 'utf-8',
+  viewport: 'width=device-width,initial-scale=1',
+});
 
 // Adds Link html tag rerferencing a specified ressource
 // e.g. Tailwind Styles: <link rel="stylesheet" href="/build/_assets/root.tailwind-XYZ.css">

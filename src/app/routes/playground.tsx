@@ -6,7 +6,7 @@ import theme from '~/core/theme';
 
 const Icons: React.FC = () => {
   return (
-    <PageLayout showNav={false} showFooter={false}>
+    <PageLayout>
       <div className="flex flex-col">
         <Icon.AlertCircle size={48} />
         <Icon.ArrowRight size={48} />

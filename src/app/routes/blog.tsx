@@ -9,7 +9,7 @@ import PageLayout from '~/components/layout/PageLayout';
 const Blog: React.FC = () => {
   // 'Outlet'
   return (
-    <PageLayout mdx={false}>
+    <PageLayout>
       {({ MdxWrapper }) => (
         <article className={MdxWrapper}>
           <Outlet />

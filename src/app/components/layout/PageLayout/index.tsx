@@ -1,9 +1,4 @@
-import {
-  LiveReload,
-  Scripts,
-  ScrollRestoration,
-  useLoaderData,
-} from '@remix-run/react';
+import { LiveReload, Scripts, ScrollRestoration } from '@remix-run/react';
 import clsx from 'clsx';
 import React from 'react';
 import { tss } from '~/core/helper/tss';
@@ -26,7 +21,6 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     mdx = false,
     className,
   } = props;
-  const data = useLoaderData();
 
   return (
     <html lang="en">
@@ -101,7 +95,6 @@ const MdxWrapper = tss`
   prose
   tablet:prose-xl
   py-10
-  test
   prose-h1:font-playfair-display
   prose-h2:font-playfair-display
   prose-h3:font-sf-pro-text
