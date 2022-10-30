@@ -5,11 +5,12 @@ import { Dialog } from '@headlessui/react';
 import NavItems from './NavItems';
 import { tss } from '~/core/helper/tss';
 import { HighlightedPhoneNumber } from '~/components/other';
-import { contactConfig } from '~/core/config';
+import { useRootContext } from '~/core/context';
 
 const NavPopover: React.FC<TNavPopoverProps> = (props) => {
   const { display = 'tablet:hidden', className } = props;
   const [isOpen, setIsOpen] = useState(false);
+  const { contactConfig } = useRootContext();
 
   return (
     <div className={clsx(className, display, Container)}>

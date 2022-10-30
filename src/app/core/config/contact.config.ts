@@ -1,3 +1,5 @@
+// Note: This file can only be accessed on the server! (Due 'process')
+// -> Dynamic import required (e.g. in loader function)
 export const contactConfig = {
   phoneNumber: process.env.CONTACT_PHONE_NUMBER ?? 'unknown',
   firstName: process.env.CONTACT_FIRST_NAME ?? 'unknown',

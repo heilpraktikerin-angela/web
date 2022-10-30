@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 import Icon from '~/components/icons';
-import { contactConfig } from '~/core/config';
+import { useRootContext } from '~/core/context';
 import { tss } from '~/core/helper/tss';
 
 const Logo: React.FC<TLogoProps> = (props) => {
@@ -11,6 +11,7 @@ const Logo: React.FC<TLogoProps> = (props) => {
     href = '/',
     mobileCenter = false,
   } = props;
+  const { contactConfig } = useRootContext();
 
   return (
     <a
