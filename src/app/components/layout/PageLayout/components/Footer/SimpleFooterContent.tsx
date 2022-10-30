@@ -1,10 +1,11 @@
 import React from 'react';
 import Logo from '~/components/other/Logo';
 import TextButton from '~/components/primitive/buttons/TextButton';
+import { useRootContext } from '~/core/context';
 import { tss } from '~/core/helper/tss';
 
 const SimpleFooterContent: React.FC = () => {
-  const contactConfig = window.ENV.contactConfig;
+  const { contactConfig } = useRootContext();
 
   return (
     <div className={Container}>

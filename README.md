@@ -207,6 +207,12 @@ imported in the root of the project.
 - [Issue asked Thread](https://answers.netlify.com/t/remix-app-deploy-runtime-handlernotfound-server-handler-is-undefined-or-not-exported/77847/11)
 - [Stackoverflow](https://stackoverflow.com/questions/74165217/additional-not-imported-dependencies-for-remix-site-deploy-to-netlify-required)
 
+### `process` is not defined
+
+- [Background Information](https://remix.run/docs/en/v1/guides/constraints)
+- [Docs](https://remix.run/docs/en/v1/guides/envvars)
+- [How to use them in the UI](https://stackoverflow.com/questions/70730642/window-is-not-defined-when-trying-to-access-environment-variables-in-remix)
+
 ---
 
 ## 👨‍🏫 Learnings
@@ -265,6 +271,7 @@ Not neccessary as it automatically structures them below the `.scss` file.
 ### Environment Variables - Remix
 
 - [Docs](https://remix.run/docs/en/v1/guides/envvars)
+- [How to use them in the UI](https://stackoverflow.com/questions/70730642/window-is-not-defined-when-trying-to-access-environment-variables-in-remix)
 
 ### Prose Wrap
 
@@ -278,3 +285,7 @@ Not neccessary as it automatically structures them below the `.scss` file.
 ### Remix Examples
 
 - [Github](https://github.com/remix-run/examples/tree/main/google-analytics)
+
+### Remix Module Constraints (Server & Browser Environment)
+
+- [Docs](https://remix.run/docs/en/v1/guides/constraints)
