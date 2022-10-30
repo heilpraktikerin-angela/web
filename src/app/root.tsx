@@ -32,6 +32,10 @@ export async function loader() {
 const App: React.FC = () => {
   const { ENV } = useLoaderData();
 
+  React.useEffect(() => {
+    window.ENV = ENV;
+  }, [ENV]);
+
   // Note: Each Page referenced here (-> all Pages in `/routes`) needs to be wrapped in a PageLayout,
   // to ensure everything works as expected.
   // All necessary Components for LiveReloading, linking Links or Meta are referenced in there.
@@ -40,7 +44,7 @@ const App: React.FC = () => {
   // (e.g. hide Navbar, different Navbar, ..)
   return (
     <RootContext.Provider value={ENV}>
-      <Outlet />
+      <Outlet context={ENV} />
     </RootContext.Provider>
   );
 };
