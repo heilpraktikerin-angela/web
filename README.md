@@ -300,7 +300,7 @@ Not neccessary as it automatically structures them below the `.scss` file.
 
 ### Netlify Redirect
 
-- [Blog](https://www.netlify.com/blog/2017/05/04/how-to-do-redirects-on-netlify/#:~:text=You%20can%20configure%20redirects%20and,the%20folder%20you're%20deploying.)
+- [Blog](https://seanherron.com/blog/domain-level-redirects-in-netlify/)
 - [Docs](https://docs.netlify.com/routing/redirects/redirect-options/#domain-level-redirects)
 - [Forum](https://answers.netlify.com/t/redirect-subdomain-to-another-site/7556/3)
 

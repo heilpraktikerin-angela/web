@@ -22,7 +22,10 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     mdx = false,
     className,
   } = props;
-  const {googleConfig} = useRootContext();
+  const {googleConfig, contactConfig} = useRootContext();
+
+  // Everything located in the browser is exposed to the end user anyway
+  console.log({googleConfig, contactConfig});
 
   return (
     <html lang="en">
