@@ -15,15 +15,15 @@
   status = 200
 
 [[redirects]]
-  from = "https://scan.angelakohrs.de"
-  to = "https://angelakohrs.de"
+  from = "https://scan.angelakohrs.de/*"
+  to = "https://www.angelakohrs.de/:splat"
   status = 301
   force = true
   headers = {X-From = "Scan Subdomain"}
 
 [[redirects]]
-  from = "https://heilpraktikerin.angelakohrs.de"
-  to = "https://angelakohrs.de"
+  from = "https://heilpraktikerin.angelakohrs.de/*"
+  to = "https://www.angelakohrs.de/:splat"
   status = 301
   force = true
   headers = {X-From = "Heilpraktikerin Subdomain"}
