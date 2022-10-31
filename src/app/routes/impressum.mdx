@@ -10,14 +10,13 @@ import { contactConfig } from '~/core/config';
 
 # Impressum
 
----
-
 ### Kontakt
 
 {contactConfig.address.street} {contactConfig.address.streetNumber} <br/>
 {contactConfig.address.postCode} {contactConfig.address.city} <br/> Telefon:
 {contactConfig.phoneNumber} <br/> Email: {contactConfig.email} <br/> Homepage:
-{contactConfig.homepage} <br/>
+
+<a href={contactConfig.homepage}>{contactConfig.homepage}</a> <br />
 
 ### Haftungshinweis
 
