@@ -1,0 +1,6 @@
+# https://docs.netlify.com/routing/redirects/redirect-options/#domain-level-redirects
+
+http://scan.angelakohrs.de/_ https://www.angelakohrs.de/:splat 301!
+https://scan.angelakohrs.de/_ https://www.angelakohrs.de/:splat 301!
+http://heilpraktikerin.angelakohrs.de/_ https://www.angelakohrs.de/:splat 301!
+https://heilpraktikerin.angelakohrs.de/_ https://www.angelakohrs.de/:splat 301!
