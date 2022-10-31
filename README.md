@@ -30,6 +30,9 @@ yet public.
    ```env
    # .env.local
 
+   # Analytics
+   GA_TRACKING_ID="1234"
+
    # Note: I wasn't allowed to publicly share the contact information on Github.
    # This was a condition for making the code available open source
    # Don't ask me why because the website is public anyway but who cares lol.
@@ -303,3 +306,8 @@ Not neccessary as it automatically structures them below the `.scss` file.
 ### ConvertKit vs Mailchimp
 
 - [Mailchimp vs ConvertKit in 2022](https://www.youtube.com/watch?v=WHVRQnk6Kjk)
+
+### Google Analytics
+
+- [Remix Example](https://github.com/remix-run/examples/tree/main/google-analytics)
+- [Where to find your Google Analytics Tracking ID](https://borlabs.io/kb/where-to-find-your-google-analytics-tracking-id/)

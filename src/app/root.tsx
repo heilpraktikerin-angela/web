@@ -1,9 +1,11 @@
 import React from 'react';
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
-import { Outlet, useLoaderData } from '@remix-run/react';
+import { Outlet, useLoaderData, useLocation } from '@remix-run/react';
 import styles from '~/styles/root.tailwind.css';
 import { RootContext } from './core/context';
+import type { contactConfig, googleConfig } from './core/config';
+import * as google from './core/google';
 
 // MetaFuction, .. not exported from './home' because of Highdration issue
 export const meta: MetaFunction = () => ({
@@ -26,21 +28,30 @@ export const links: LinksFunction = () => {
 export async function loader() {
   // https://github.com/remix-run/remix/issues/1186
   // https://github.com/remix-run/remix/discussions/2936
-  const { contactConfig } = await import('./core/config');
+  const { contactConfig, googleConfig } = await import('./core/config');
 
-  return json({
+  return json<TLoaderData>({
     ENV: {
       contactConfig,
+      googleConfig,
     },
   });
 }
 
 const App: React.FC = () => {
-  const { ENV } = useLoaderData();
+  const location = useLocation();
+  const { ENV } = useLoaderData<TLoaderData>();
+  const gaTrackingId = ENV.googleConfig.gaTrackingId;
 
   React.useEffect(() => {
     window.ENV = ENV;
   }, [ENV]);
+
+  React.useEffect(() => {
+    if (gaTrackingId?.length) {
+      google.gtag.pageview(location.pathname, gaTrackingId);
+    }
+  }, [location, gaTrackingId]);
 
   // Note: Each Page referenced here (-> all Pages in `/routes`) needs to be wrapped in a PageLayout,
   // to ensure everything works as expected.
@@ -50,9 +61,41 @@ const App: React.FC = () => {
   // (e.g. hide Navbar, different Navbar, ..)
   return (
     <RootContext.Provider value={ENV}>
+      {/* Google Analytics */}
+      {process.env.NODE_ENV === 'development' || !gaTrackingId ? null : (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
+          />
+          <script
+            async
+            id="gtag-init"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '${gaTrackingId}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
+        </>
+      )}
+
       <Outlet context={ENV} />
     </RootContext.Provider>
   );
 };
 
 export default App;
+
+type TLoaderData = {
+  ENV: {
+    contactConfig: typeof contactConfig;
+    googleConfig: typeof googleConfig;
+  };
+};
