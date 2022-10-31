@@ -60,33 +60,8 @@ const App: React.FC = () => {
   // instead of building it in here for better customization in the Page Components regarding the Layout
   // (e.g. hide Navbar, different Navbar, ..)
   return (
-    <RootContext.Provider value={ENV}>
-      {/*/!* Google Analytics *!/*/}
-      {/*{process.env.NODE_ENV === 'development' || !gaTrackingId ? null : (*/}
-      {/*  <>*/}
-      {/*    <script*/}
-      {/*      async*/}
-      {/*      src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}*/}
-      {/*    />*/}
-      {/*    <script*/}
-      {/*      async*/}
-      {/*      id="gtag-init"*/}
-      {/*      dangerouslySetInnerHTML={{*/}
-      {/*        __html: `*/}
-      {/*          window.dataLayer = window.dataLayer || [];*/}
-      {/*          function gtag(){dataLayer.push(arguments);}*/}
-      {/*          gtag('js', new Date());*/}
-
-      {/*          gtag('config', '${gaTrackingId}', {*/}
-      {/*            page_path: window.location.pathname,*/}
-      {/*          });*/}
-      {/*        `,*/}
-      {/*      }}*/}
-      {/*    />*/}
-      {/*  </>*/}
-      {/*)}*/}
-
-      <Outlet context={ENV} />
+    <RootContext.Provider value={ENV as any}>
+      <Outlet />
     </RootContext.Provider>
   );
 };

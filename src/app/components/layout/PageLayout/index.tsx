@@ -10,6 +10,7 @@ import {
   ContentTopMargin,
   ContentTopPadding,
 } from './styles';
+import {useRootContext} from "~/core/context";
 
 const PageLayout: React.FC<TPageLayoutProps> = (props) => {
   const {
@@ -21,6 +22,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     mdx = false,
     className,
   } = props;
+  const {googleConfig} = useRootContext();
 
   return (
     <html lang="en">
@@ -47,6 +49,32 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
             : children}
         </main>
         {showFooter && <Footer />}
+
+        {/* Google Analytics */}
+        {process.env.NODE_ENV === 'development' || !googleConfig.gaTrackingId ? null : (
+            <>
+              <script
+                  async
+                  src={`https://www.googletagmanager.com/gtag/js?id=${googleConfig.gaTrackingId}`}
+              />
+              <script
+                  async
+                  id="gtag-init"
+                  dangerouslySetInnerHTML={{
+                    __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '${googleConfig.gaTrackingId}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+                  }}
+              />
+            </>
+        )}
+
 
         {/* Remix Stuff */}
         <ScrollRestoration />
