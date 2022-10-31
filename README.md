@@ -148,10 +148,10 @@ imported in the root of the project.
 - [ ] Implement feature to collect Email Adresses with Mailchimp (max 500 sub ->
       should be enough for now) [ ] Make mobile navbar smaller (by just showing
       the Logo) when scrolling down (nice transition)
-- [ ] Font in PROD not loading
 - [ ] Google Analytics
 - [x] Impressum (based on:
       https://www.heilpraktikerausbildung-franken.de/impressum)
+- [ ] Figure out why subdomains like `scan.domain.de` not working
 
 </details>
 
@@ -159,6 +159,7 @@ imported in the root of the project.
 <summary>Bug fixes</summary>
 
 - [ ] Make Navigation Menu working again
+- [ ] Font in PROD not loading
 
 </details>
 

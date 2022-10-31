@@ -51,6 +51,7 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
         {showFooter && <Footer />}
 
         {/* Google Analytics */}
+        {/* https://analytics.google.com/analytics/web/?authuser=3#/a247656620p339929547/admin/streams/table/4247260073 */}
         {process.env.NODE_ENV === 'development' || !googleConfig.gaTrackingId ? null : (
             <>
               <script
