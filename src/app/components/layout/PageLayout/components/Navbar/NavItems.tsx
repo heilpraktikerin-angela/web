@@ -13,7 +13,7 @@ const NavItems: React.FC<TNavItemsProps> = (props) => {
     },
     {
       name: 'Über mich',
-      href: '#about-me',
+      href: '/aboutme',
     },
     {
       name: 'Blog',

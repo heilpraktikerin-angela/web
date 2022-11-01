@@ -1,5 +1,7 @@
 # https://docs.netlify.com/routing/redirects/
 
+https://blog.angelakohrs.de/* https://www.angelakohrs.de/blog/:splat 301!
+
 https://www.scan.angelakohrs.de https://www.angelakohrs.de 301!
 https://www.scan.angelakohrs.de/* https://www.angelakohrs.de/:splat 301!
 
