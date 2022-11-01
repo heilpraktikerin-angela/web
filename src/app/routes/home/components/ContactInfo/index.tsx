@@ -3,17 +3,32 @@ import React from 'react';
 import { useRootContext } from '~/core/context';
 import { tss } from '~/core/helper/tss';
 import TextItem from './components/TextItem';
+import { isMobile } from 'react-device-detect';
 
 const ContactInfo: React.FC<TContactInfoProps> = (props) => {
   const { className } = props;
   const { contactConfig } = useRootContext();
+  const reducedPhoneNumber = contactConfig.phoneNumber.replace(/ /g, '');
+  const whatsAppText = 'Hallo Angela';
 
   return (
     <div className={clsx(Container, className)}>
       <h2 className={Title}>Kontakt</h2>
       <div className={ListContainer}>
-        <TextItem icon="Phone" text={contactConfig.phoneNumber} />
-        <TextItem icon="Mail" text={contactConfig.email} />
+        <TextItem
+          icon="Phone"
+          text={contactConfig.phoneNumber}
+          href={
+            isMobile
+              ? `tel:${reducedPhoneNumber}`
+              : `whatsapp://send?text=${whatsAppText}&phone=${reducedPhoneNumber}`
+          }
+        />
+        <TextItem
+          icon="Mail"
+          text={contactConfig.email}
+          href={`mailto://${contactConfig.email}`}
+        />
         <TextItem icon="MapPin" text={contactConfig.surrounding} />
       </div>
     </div>

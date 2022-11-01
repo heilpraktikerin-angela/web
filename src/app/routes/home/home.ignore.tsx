@@ -7,10 +7,12 @@ import theme from '~/core/theme';
 import clsx from 'clsx';
 import StatisticText from './components/StatisticText';
 import ContactInfo from './components/ContactInfo';
+import { useRootContext } from '~/core/context';
 
 const Home: React.FC = () => {
   const [width] = useWindowSize();
   const [tabletBreakPoint, setTabletBreakPoint] = React.useState(-1);
+  const { contactConfig } = useRootContext();
 
   // https://stackoverflow.com/questions/46443652/react-16-warning-expected-server-html-to-contain-a-matching-div-in-body
   React.useEffect(
@@ -54,7 +56,7 @@ const Home: React.FC = () => {
                   <Button
                     text="Kostenloses Erstgespräch"
                     iconRight="ArrowRight"
-                    href={'/'}
+                    href={contactConfig.calcom.initialInterviewUrl}
                     className={CallToAction}
                   />
                 </div>
