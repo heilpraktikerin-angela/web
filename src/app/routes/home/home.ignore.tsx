@@ -54,7 +54,7 @@ const Home: React.FC = () => {
                   <Button
                     text="Kostenloses Erstgespräch"
                     iconRight="ArrowRight"
-                    href={'/'}
+                    href={'https://cal.com/angela-kohrs-bd6dvq/15min'}
                     className={CallToAction}
                   />
                 </div>

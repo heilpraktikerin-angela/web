@@ -235,6 +235,7 @@ imported in the root of the project.
 https://www.scan.jeff.de https://www.jeff.de 301!
 https://www.scan.jeff.de/* https://www.jeff.de/:splat 301!
 ```
+
 ---
 
 ## 👨‍🏫 Learnings
