@@ -13,4 +13,7 @@ export const contactConfig = {
   surrounding: process.env.CONTACT_SURROUNDING ?? 'unknown',
   email: process.env.CONTACT_EMAIL ?? 'unknown',
   homepage: process.env.CONTACT_HOMEPAGE ?? 'unknown',
+  calcom: {
+    initialInterviewUrl: process.env.CAL_COM_INITIAL_INTERVIEW_URL ?? 'unknown'
+  }
 };

@@ -1,25 +1,26 @@
 import clsx from 'clsx';
 import React from 'react';
+import { useRootContext } from '~/core/context';
 import { tss } from '~/core/helper/tss';
-
-const navItems: TNavItem[] = [
-  {
-    name: 'Termin vereinbaren',
-    href: '#arrange-appointment',
-  },
-  {
-    name: 'Über mich',
-    href: '#about-me',
-  },
-  {
-    name: 'Blog',
-    href: '/blog',
-  },
-  { name: 'Infothek', href: '#faq' },
-];
 
 const NavItems: React.FC<TNavItemsProps> = (props) => {
   const { horizontal = true } = props;
+  const { contactConfig } = useRootContext();
+  const [navItems] = React.useState([
+    {
+      name: 'Termin vereinbaren',
+      href: contactConfig.calcom.initialInterviewUrl,
+    },
+    {
+      name: 'Über mich',
+      href: '#about-me',
+    },
+    {
+      name: 'Blog',
+      href: '/blog',
+    },
+    { name: 'Infothek', href: '#faq' },
+  ]);
 
   return (
     <nav>
