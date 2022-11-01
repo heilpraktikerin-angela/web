@@ -340,3 +340,7 @@ Not neccessary as it automatically structures them below the `.scss` file.
 - [Remix Example](https://github.com/remix-run/examples/tree/main/google-analytics)
 - [Where to find your Google Analytics Tracking ID](https://borlabs.io/kb/where-to-find-your-google-analytics-tracking-id/)
 - [Google Analytics `net::ERR_BLOCKED_BY_CLIENT`](https://stackoverflow.com/questions/63588516/firebase-analytics-googletagmanager-error)
+
+### Nice Webfont Generator
+
+- [Generator](https://www.fontsquirrel.com/tools/webfont-generator)
