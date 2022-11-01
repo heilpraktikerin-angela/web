@@ -221,6 +221,20 @@ imported in the root of the project.
 - [Docs](https://remix.run/docs/en/v1/guides/envvars)
 - [How to use them in the UI](https://stackoverflow.com/questions/70730642/window-is-not-defined-when-trying-to-access-environment-variables-in-remix)
 
+### Netlify redirect Issue (`Not found RequestID: x`)
+
+- [Forum](https://answers.netlify.com/t/redirects-not-working-new-to-netlify/3369)
+- Deploy Logs: `A "_redirects" file is present in the repository but is missing in the publish directory "public".`
+  -> put `_redirects` file into the `public` folder!
+- Add to redirect URL to `Settings/Custom domains`
+
+```
+# '_redirects' Example
+# https://docs.netlify.com/routing/redirects/
+
+https://www.scan.jeff.de https://www.jeff.de 301!
+https://www.scan.jeff.de/* https://www.jeff.de/:splat 301!
+```
 ---
 
 ## 👨‍🏫 Learnings
