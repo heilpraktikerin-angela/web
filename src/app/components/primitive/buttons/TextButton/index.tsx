@@ -19,6 +19,7 @@ const TextButton: React.FC<TTextButtonProps> = (props) => {
   const {
     children,
     href,
+    target = '_self',
     onClick,
     showArrow = false,
     size = 'lg',
@@ -50,7 +51,7 @@ const TextButton: React.FC<TTextButtonProps> = (props) => {
     );
   } else if (href != null) {
     return (
-      <a href={href} className={clsx(Container, className)}>
+      <a href={href} target={target} className={clsx(Container, className)}>
         <Content />
       </a>
     );
@@ -70,6 +71,7 @@ type TTextButtonProps = {
   className?: string;
   onClick?: () => void;
   href?: string;
+  target?: '_blank' | '_self';
   showArrow?: boolean;
   size?: 'lg' | 'md' | 'sm';
 };

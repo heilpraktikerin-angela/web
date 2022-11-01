@@ -27,6 +27,14 @@ const SimpleFooterContent: React.FC = () => {
         <TextButton size={'sm'} href="/datenschutz">
           Datenschutz
         </TextButton>
+        <p>|</p>
+        <TextButton
+          size={'sm'}
+          target="_blank"
+          href="https://github.com/heilpraktikerin-angela/web"
+        >
+          Open Source
+        </TextButton>
       </div>
     </div>
   );

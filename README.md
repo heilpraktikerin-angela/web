@@ -21,6 +21,13 @@ This website built was built with Remix for a client called `Angela`.
 This website was designed in Figma. The Figma link is for privacy reasons not
 yet public.
 
+<details>
+<summary>Design Preview</summary>
+
+<img src="https://raw.githubusercontent.com/heilpraktikerin-angela/web/master/static/landing_v1.png" alt="AgileTs">
+
+</details>
+
 ---
 
 ## 🛠 Local Development
@@ -224,7 +231,8 @@ imported in the root of the project.
 ### Netlify redirect Issue (`Not found RequestID: x`)
 
 - [Forum](https://answers.netlify.com/t/redirects-not-working-new-to-netlify/3369)
-- Deploy Logs: `A "_redirects" file is present in the repository but is missing in the publish directory "public".`
+- Deploy Logs:
+  `A "_redirects" file is present in the repository but is missing in the publish directory "public".`
   -> put `_redirects` file into the `public` folder!
 - Add to redirect URL to `Settings/Custom domains`
 
@@ -235,6 +243,10 @@ imported in the root of the project.
 https://www.scan.jeff.de https://www.jeff.de 301!
 https://www.scan.jeff.de/* https://www.jeff.de/:splat 301!
 ```
+
+### @Font-face not working on mobile
+
+- [Stackoverflow](https://stackoverflow.com/questions/43327227/font-face-not-working-on-mobile)
 
 ---
 

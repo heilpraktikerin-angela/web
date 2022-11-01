@@ -6,7 +6,7 @@ import { tss } from '~/core/helper/tss';
 const NavItems: React.FC<TNavItemsProps> = (props) => {
   const { horizontal = true } = props;
   const { contactConfig } = useRootContext();
-  const [navItems] = React.useState([
+  const navItems: TNavItem[] = [
     {
       name: 'Termin vereinbaren',
       href: contactConfig.calcom.initialInterviewUrl,
@@ -19,8 +19,8 @@ const NavItems: React.FC<TNavItemsProps> = (props) => {
       name: 'Blog',
       href: '/blog',
     },
-    { name: 'Infothek', href: '#faq' },
-  ]);
+    { name: 'Infothek', href: '/faq' },
+  ];
 
   return (
     <nav>
