@@ -344,3 +344,6 @@ Not neccessary as it automatically structures them below the `.scss` file.
 ### Nice Webfont Generator
 
 - [Generator](https://www.fontsquirrel.com/tools/webfont-generator)
+
+### Free website performance checker
+- [Debug Bear](https://www.debugbear.com/test/website-speed)
