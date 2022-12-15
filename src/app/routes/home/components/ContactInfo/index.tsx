@@ -4,6 +4,7 @@ import { useRootContext } from '~/core/context';
 import { tss } from '~/core/helper/tss';
 import TextItem from './components/TextItem';
 import { isMobile } from 'react-device-detect';
+import { H2 } from '../../../../components/primitive/typography';
 
 const ContactInfo: React.FC<TContactInfoProps> = (props) => {
   const { className } = props;
@@ -13,7 +14,9 @@ const ContactInfo: React.FC<TContactInfoProps> = (props) => {
 
   return (
     <div className={clsx(Container, className)}>
-      <h2 className={Title}>Kontakt</h2>
+      <H2 className={Title} variant={'white'}>
+        Kontakt
+      </H2>
       <div className={ListContainer}>
         <TextItem
           icon="Phone"
@@ -60,10 +63,6 @@ const Container = tss`
 
 const Title = tss`
   mb-6
-  text-white
-  font-bold
-  font-playfair-display
-  text-3xl
 `;
 
 const ListContainer = tss`

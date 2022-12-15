@@ -7,6 +7,7 @@ const Blog: React.FC = () => {
 export default Blog;
 
 function postFromModule(mod: any) {
+  console.log({ mod });
   return {
     slug: mod.filename.replace(/\.mdx?$/, ''),
     ...mod.attributes.meta,

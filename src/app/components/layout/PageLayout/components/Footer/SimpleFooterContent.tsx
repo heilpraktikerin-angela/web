@@ -3,6 +3,7 @@ import Logo from '~/components/other/Logo';
 import TextButton from '~/components/primitive/buttons/TextButton';
 import { useRootContext } from '~/core/context';
 import { tss } from '~/core/helper/tss';
+import { PSM } from '../../../../primitive/typography';
 
 const SimpleFooterContent: React.FC = () => {
   const { contactConfig } = useRootContext();
@@ -12,11 +13,11 @@ const SimpleFooterContent: React.FC = () => {
       <div className={TopContainer}>
         <Logo showSubtitle={false} mobileCenter={true} />
         <div>
-          <p className={CopyrightText}>
+          <PSM className={CopyrightText} textColorClassName={'text-black'}>
             &copy; {new Date().getFullYear()}{' '}
             {`${contactConfig.firstName} ${contactConfig.lastName}`} | All
             rights reserved.
-          </p>
+          </PSM>
         </div>
       </div>
       <div className={BottomContainer}>
@@ -61,8 +62,6 @@ const TopContainer = tss`
 const CopyrightText = tss`
  mobile:mt-0
  mt-4
- text-sm 
- text-black
 `;
 
 const BottomContainer = tss`

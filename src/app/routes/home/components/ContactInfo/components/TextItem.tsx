@@ -3,6 +3,7 @@ import React from 'react';
 import Icon from '~/components/icons';
 import { tss } from '~/core/helper/tss';
 import theme from '~/core/theme';
+import { PLG } from '../../../../../components/primitive/typography';
 
 const TextItem: React.FC<TTextItemProps> = (props) => {
   const { text, icon, href } = props;
@@ -14,7 +15,9 @@ const TextItem: React.FC<TTextItemProps> = (props) => {
       <div className={IconContainer}>
         <IconComponent size={16} color={theme?.colors.secondary} />
       </div>
-      <p className={Text}>{text}</p>
+      <PLG className={Text} textColorClassName={'text-white'}>
+        {text}
+      </PLG>
     </>
   );
 
@@ -64,7 +67,4 @@ const IconContainer = tss`
 
 const Text = tss`
   ml-4
-  text-white
-  font-bold
-  font-sf-pro-text
 `;
