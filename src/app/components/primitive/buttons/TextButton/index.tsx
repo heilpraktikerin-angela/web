@@ -88,7 +88,7 @@ const Text = (size: Exclude<TTextButtonProps['size'], undefined>) => tss`
   hover:font-bold
   hover:underline
   cursor-pointer
-  font-sf-pro-text
+  font-source-sans-pro
   ${fontSize[size]}
 `;
 

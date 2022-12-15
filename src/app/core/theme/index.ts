@@ -82,6 +82,6 @@ export type TTheme = {
   };
   fontFamily: {
     'playfair-display': string;
-    'sf-pro-text': string;
+    'source-sans-pro': string;
   };
 };

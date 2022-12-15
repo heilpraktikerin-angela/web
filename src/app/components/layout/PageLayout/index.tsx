@@ -122,7 +122,7 @@ const Container = tss`
   overflow-x-hidden
   bg-white
   text-black
-  font-sf-pro-text
+  font-source-sans-pro
 `;
 
 const ContentContainer = tss`
@@ -135,7 +135,7 @@ const MdxWrapper = tss`
   py-10
   prose-h1:font-playfair-display
   prose-h2:font-playfair-display
-  prose-h3:font-sf-pro-text
+  prose-h3:font-source-sans-pro
   prose-h4:font-playfair-display
   prose-p:font-sf-pro
 `;
