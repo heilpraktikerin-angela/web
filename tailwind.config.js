@@ -96,7 +96,7 @@ module.exports = {
     },
     fontFamily: {
       'playfair-display': `"Playfair Display", "sans-serif"`,
-      'sf-pro-text': `"SF Pro Text", "sans-serif"`,
+      'source-sans-pro': `"Source Sans Pro", "sans-serif"`,
     },
     borderRadius: {
       none: '0',

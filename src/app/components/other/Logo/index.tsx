@@ -72,7 +72,7 @@ const LogoTextContainerMobileCenter = tss`
 
 const LogoTextSubTitle = tss`
   text-sm
-  font-sf-pro-text
+  font-source-sans-pro
   -mb-2
 `;
 

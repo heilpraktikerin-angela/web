@@ -36,6 +36,10 @@ const SimpleFooterContent: React.FC = () => {
         >
           Open Source
         </TextButton>
+        <p>|</p>
+        <TextButton size={'sm'} target="_blank" href={contactConfig.googleMaps}>
+          Google Maps
+        </TextButton>
       </div>
     </div>
   );
