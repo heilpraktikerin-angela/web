@@ -3,9 +3,9 @@
   "sideEffects": false,
   "scripts": {
     "start": "cross-env NODE_ENV=production netlify dev",
+    "start:dev": "concurrently \"pnpm run watch:css\" \"remix dev\"",
     "build": "pnpm run build:css && remix build",
     "build:css": "pnpm run generate:sass:css --style compressed && pnpm run generate:tailwind:css --minify",
-    "dev": "concurrently \"pnpm run watch:css\" \"remix dev\"",
     "watch:css": "pnpm run clean:css && concurrently \"pnpm run generate:sass:css --watch\" \"pnpm run generate:tailwind:css --watch\"",
     "clean:css": "shx rm -rf $(ls 'src/app/**/*.css')",
     "generate:sass:css": "sass ./src/app/:./src/app/ --no-source-map",

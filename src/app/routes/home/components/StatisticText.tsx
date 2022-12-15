@@ -1,12 +1,13 @@
 import React from 'react';
 import { tss } from '~/core/helper/tss';
+import { H3, PSM } from '../../../components/primitive/typography';
 
 const StatisticText: React.FC<TStatisticTextProps> = (props) => {
   const { title, subtitle, className } = props;
   return (
     <div className={className}>
-      <h4 className={Title}>{title}</h4>
-      <p className={Subtitle}>{subtitle}</p>
+      <H3 variant={'white'}>{title}</H3>
+      <PSM textColorClassName={'text-white'}>{subtitle}</PSM>
     </div>
   );
 };
@@ -18,16 +19,3 @@ type TStatisticTextProps = {
   subtitle: string;
   className?: string;
 };
-
-const Title = tss`
-  text-white
-  text-2xl
-  font-bold
-  font-sf-pro-text 
-`;
-
-const Subtitle = tss`
-  text-white
-  text-sm
-  font-sf-pro-text 
-`;

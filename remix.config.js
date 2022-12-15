@@ -10,6 +10,7 @@ module.exports = {
     '**/*.css',
     '**/*.scss',
     '**/components/**',
+    '**/home/**',
   ],
   devServerPort: 8002, // https://github.com/remix-run/remix/issues/2958
   appDirectory: './src/app',

@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import StatisticText from './components/StatisticText';
 import ContactInfo from './components/ContactInfo';
 import { useRootContext } from '~/core/context';
+import { H1, H2, PLG } from '../../components/primitive/typography';
 
 const Home: React.FC = () => {
   const [width] = useWindowSize();
@@ -34,25 +35,25 @@ const Home: React.FC = () => {
               <div className={clsx(InnerContainerXSpacing, TitleContainer)}>
                 {/* Left */}
                 <div className={LeftContainer}>
-                  <h1 className={Title}>
+                  <H1 className={Title}>
                     Praxis für{' '}
                     <span className="text-secondary">Naturheilkunde</span>
-                  </h1>
-                  <h2 className={Subtitle}>
+                  </H1>
+                  <H2 className={Subtitle}>
                     Klassische{' '}
                     <span className="text-secondary">Homöopathie</span>{' '}
                     {width > tabletBreakPoint && <br />} und{' '}
                     <span className="text-secondary">Phytotherapie</span>
-                  </h2>
+                  </H2>
                 </div>
 
                 {/* Right */}
                 <div className={RightContainer}>
-                  <p className={Description}>
+                  <PLG className={Description}>
                     Schonende und sanfte Heilung mit Globuli,{' '}
                     {width > tabletBreakPoint && <br />} basierend auf
                     natürlichen Stoffen.
-                  </p>
+                  </PLG>
                   <Button
                     text="Kostenloses Erstgespräch"
                     iconRight="ArrowRight"
@@ -135,38 +136,22 @@ const RightContainer = tss`
 
 const Title = tss`
   mb-4
-  text-3xl
-  tablet:text-4xl
   tablet:text-left
   text-center
-  font-playfair-display
-  text-black
-  font-bold
-  leading-[2.5rem]
-  desktop:leading-[3.5rem]
   whitespace-normal
   desktop:whitespace-nowrap
 `;
 
 const Subtitle = tss`
   tablet:mt-2
-  text-2xl
-  tablet:text-3xl
   tablet:text-left
   text-center
-  font-playfair-display
-  text-black
-  font-bold
-  desktop:leading-[2.5rem]
-  leading-[2rem]
 `;
 
 const Description = tss`
   mt-4
   mobile:mt-8
   tablet:mt-0
-  text-lg
-  test-black
   tablet:text-left
   text-center
 `;

@@ -10,7 +10,7 @@ import {
   ContentTopMargin,
   ContentTopPadding,
 } from './styles';
-import {useRootContext} from "~/core/context";
+import { useRootContext } from '~/core/context';
 
 const PageLayout: React.FC<TPageLayoutProps> = (props) => {
   const {
@@ -22,10 +22,10 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
     mdx = false,
     className,
   } = props;
-  const {googleConfig, contactConfig} = useRootContext();
+  const { googleConfig, contactConfig } = useRootContext();
 
   // Everything located in the browser is exposed to the end user anyway
-  console.log({googleConfig, contactConfig});
+  console.log({ googleConfig, contactConfig });
 
   return (
     <html lang="en">
@@ -55,17 +55,18 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
 
         {/* Google Analytics */}
         {/* https://analytics.google.com/analytics/web/?authuser=3#/a247656620p339929547/admin/streams/table/4247260073 */}
-        {process.env.NODE_ENV === 'development' || !googleConfig.gaTrackingId ? null : (
-            <>
-              <script
-                  async
-                  src={`https://www.googletagmanager.com/gtag/js?id=${googleConfig.gaTrackingId}`}
-              />
-              <script
-                  async
-                  id="gtag-init"
-                  dangerouslySetInnerHTML={{
-                    __html: `
+        {process.env.NODE_ENV === 'development' ||
+        !googleConfig.gaTrackingId ? null : (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleConfig.gaTrackingId}`}
+            />
+            <script
+              async
+              id="gtag-init"
+              dangerouslySetInnerHTML={{
+                __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
@@ -74,16 +75,21 @@ const PageLayout: React.FC<TPageLayoutProps> = (props) => {
                   page_path: window.location.pathname,
                 });
               `,
-                  }}
-              />
-            </>
+              }}
+            />
+          </>
         )}
-
 
         {/* Remix Stuff */}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        {/* Workaround for https://github.com/tailwindlabs/headlessui/discussions/666 */}
+        <div id="headlessui-portal-root">
+          {/* It needs at least one child, so that HeadlessUI doesn't remove this portal root workaround
+        ( https://github.com/tailwindlabs/headlessui/blob/main/packages/@headlessui-react/src/components/portal/portal.tsx#L84 ) */}
+          <div />
+        </div>
       </body>
     </html>
   );

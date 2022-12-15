@@ -44,10 +44,6 @@ const App: React.FC = () => {
   const gaTrackingId = ENV.googleConfig.gaTrackingId;
 
   React.useEffect(() => {
-    window.ENV = ENV;
-  }, [ENV]);
-
-  React.useEffect(() => {
     if (gaTrackingId?.length) {
       google.gtag.pageview(location.pathname, gaTrackingId);
     }
@@ -57,11 +53,11 @@ const App: React.FC = () => {
   // to ensure everything works as expected.
   // All necessary Components for LiveReloading, linking Links or Meta are referenced in there.
   // Decided to outsource the PageLayout (Nav, Head, Footer, ..),
-  // instead of building it in here for better customization in the Page Components regarding the Layout
+  // instead of building it in here for better customization in the Page Components regarding the Layout and Meta Tags
   // (e.g. hide Navbar, different Navbar, ..)
   return (
     <RootContext.Provider value={ENV as any}>
-      <Outlet />
+      <Outlet context={ENV}/>
     </RootContext.Provider>
   );
 };

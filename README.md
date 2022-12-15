@@ -35,24 +35,9 @@ yet public.
 1. Setup environment variables:
 
    ```env
-   # .env.local
+   .env.local
 
-   # Analytics
-   GA_TRACKING_ID="1234"
-
-   # Note: I wasn't allowed to publicly share the contact information on Github.
-   # This was a condition for making the code available open source
-   # Don't ask me why because the website is public anyway but who cares lol.
-   CONTACT_PHONE_NUMBER="+12 3456 789012"
-   CONTACT_FIRST_NAME="Jeff"
-   CONTACT_LAST_NAME="Rocks"
-   CONTACT_ADDRESS_STREET="Muster-Street"
-   CONTACT_ADDRESS_STREET_NUMBER=3
-   CONTACT_ADDRESS_POST_CODE=12345
-   CONTACT_ADDRESS_CITY="Jeffhausen"
-   CONTACT_SURROUNDING="Jeffhausen / Jeffcity"
-   CONTACT_EMAIL="jeff@jeff.com"
-   CONTACT_HOMEPAGE="https://www.jeff.de"
+   # See ".env.example" for reference
    ```
 
 2. Start the Remix dev server:
