@@ -16,11 +16,11 @@ const titleColors = {
 };
 
 const Title: React.FC<TTitleProps> = (props) => {
-  const { variant = 'black', size, as, className, ...other } = props;
+  const { variant = 'black', size, as, className, ...rest } = props;
 
   return React.createElement(as ?? size, {
     className: clsx(fontSize[size], titleColors[variant], className),
-    ...other,
+    ...rest,
   });
 };
 

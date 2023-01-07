@@ -1,5 +1,4 @@
 import React from 'react';
-import { tss } from '~/core/helper/tss';
 import { H3, PSM } from '../../../components/primitive/typography';
 
 const StatisticText: React.FC<TStatisticTextProps> = (props) => {

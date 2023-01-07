@@ -12,7 +12,7 @@ const Blog: React.FC = () => {
     <PageLayout>
       {({ MdxWrapper }) => (
         <article className={MdxWrapper}>
-          <Outlet />
+          <Outlet context={{ jeff: 'My name is jeff' }} />
         </article>
       )}
     </PageLayout>
