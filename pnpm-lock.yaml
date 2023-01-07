@@ -11,6 +11,7 @@ specifiers:
   '@remix-run/react': ^1.7.3
   '@remix-run/serve': ^1.7.3
   '@tailwindcss/typography': ^0.5.7
+  '@types/lodash.isequal': ^4.5.6
   '@types/react': ^18.0.15
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.40.1
@@ -21,6 +22,7 @@ specifiers:
   eslint: ^8.23.1
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
+  lodash.isequal: ^4.5.0
   prettier: ^2.7.1
   react: ^18.2.0
   react-device-detect: ^2.2.2
@@ -40,6 +42,7 @@ dependencies:
   '@remix-run/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
   clsx: 1.2.1
   cross-env: 7.0.3
+  lodash.isequal: 4.5.0
   react: 18.2.0
   react-device-detect: 2.2.2_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
@@ -50,6 +53,7 @@ devDependencies:
   '@remix-run/eslint-config': 1.7.3_lepdvhpfl4ktcue7v6mt34wuv4
   '@remix-run/serve': 1.7.3_biqbaboplfbrettd7655fr4n2y
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
+  '@types/lodash.isequal': 4.5.6
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.40.1_c4zyna56jjjrggqkyejnaxjxfu
@@ -1948,6 +1952,16 @@ packages:
     deprecated: This is a stub types definition. keyv provides its own type definitions, so you do not need this installed.
     dependencies:
       keyv: 4.5.0
+    dev: true
+
+  /@types/lodash.isequal/4.5.6:
+    resolution: {integrity: sha512-Ww4UGSe3DmtvLLJm2F16hDwEQSv7U0Rr8SujLUA2wHI2D2dm8kPu6Et+/y303LfjTIwSBKXB/YTUcAKpem/XEg==}
+    dependencies:
+      '@types/lodash': 4.14.191
+    dev: true
+
+  /@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
   /@types/mdast/3.0.10:
@@ -5221,6 +5235,10 @@ packages:
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
+
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    dev: false
 
   /lodash.isplainobject/4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
